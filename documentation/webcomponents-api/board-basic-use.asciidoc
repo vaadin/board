@@ -58,7 +58,6 @@ with 100% width item, see example below.
     </vaadin-board-row>
   </div>
 </body>
-</html>
 ----
 
 You can use `board-cols` to specify the width of the inner element in columns:
