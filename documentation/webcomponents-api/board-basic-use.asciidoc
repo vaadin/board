@@ -72,5 +72,5 @@ You can use `board-cols` to specify the width of the inner element in columns:
 [[board.basic-use.redraw]]
 === Redraw method
 
-Vaadin Board relies on window resize events to achieve responsiveness.
-In some cases the board size might change without a window resize, for instance if a fixed size is set in its style, for such cases the [methodname]#redraw# method of the [elementname]#vaadin-board# element should be used.
+Vaadin Board relies on resize events to achieve responsiveness.
+In some cases the board size might change without a resize event, for instance if a fixed size is set in its style, for such cases the [methodname]#redraw# method of the [elementname]#vaadin-board# element should be used.
