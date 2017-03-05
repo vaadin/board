@@ -4,17 +4,16 @@ order: 1
 layout: page
 ---
 
-[[board.overview]]
-= Overview
-The [elementname]#vaadin-board# is a Polymer element for creating flexible responsive layouts and building nice looking dashboards.
-The [elementname]#vaadin-board# key feature is how it effectively reorders the widgets on different screen sizes, maximizing the use of space and looking stunning.
-Vaadin Board is using link:https://github.com/polymer/polymer/tree/2.0-preview[Polymer 2].
+[[board]]
+= Vaadin Board
+
+Vaadin Board is an upcoming Pro Tools web component. It is a flexible layout that allows you to build nice looking dashboard or intro screens to your application. Vaadin Boards key feature is how it effectively reorders the widgets on different screen sizes, maximizing the use of space and looking stunning.
+
+We are still working on the product, documentation, web page and demos, and these will be made available in the very near future. Vaadin Board is built with Polymer 2 as a stand alone web component, and it will also get a Java API for Vaadin Framework 8. Find out more on link:https://vaadin.com/board[product page] soon.
 
 = Features
 
 - Allows to divide you layout into regions by using [elementname]#vaadin-board-row#.
 - Layout is responsive - rearranges child elements based on available space.
 - Supports nested regions.
-
-= Limitations
 
