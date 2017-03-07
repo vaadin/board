@@ -18,3 +18,12 @@ Vaadin Board is using link:https://github.com/polymer/polymer/tree/2.0-preview[P
 
 = Limitations
 
+- Because non-chrome browsers need to load a polyfill, you can see flickering, before definition of the web component comes in.
+  You can suspend rendering the component before it is ready by adding the "unresolved" tag in body:
+
+[source, html]
+----
+  <body unresolved>
+   //Your code here
+  </body>
+----
