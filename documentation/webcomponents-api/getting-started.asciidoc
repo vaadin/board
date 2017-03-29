@@ -1,0 +1,126 @@
+---
+title: Getting Started
+order: 2
+layout: page
+---
+
+[[board.getting-started]]
+= Introduction
+
+This tutorial walks you, step-by-step, through what you need to do to add Vaadin Board to your web page.
+You will learn how to:
+
+* Create a polymer application.
+* Install Vaadin Board as a dependency to your application.
+* Add Vaadin Board to a Web page.
+* Create basic configuration of Vaadin Board.
+
+The vaadin-board is a regular web component, which you can add to a web page.
+Vaadin can be used both with and without Polymer.
+In this tutorial we will use link:https://www.polymer-project.org/2.0/docs/tools/polymer-cli[Polymer CLI] for creating the initial project.
+The final result of this tutorial can be explored at link:https://github.com/vaadin/vaadin-board-getting-started[GitHub].
+
+[[board.project.setup]]
+== Project Setup
+
+Follow the link:https://www.polymer-project.org/2.0/docs/tools/polymer-cli#install[instructions] to install Polymer CLI.
+Create an app project following these link:https://www.polymer-project.org/2.0/docs/tools/polymer-cli#app[instructions].
+Select [classname]#polymer-2-application# as a template when running [command]#polymer init#.
+After the initialization process Polymer CLI generates the following files and directories.
+
+* bower.json. Configuration file for Bower.
+* bower_components/. Project dependencies. See Manage dependencies.
+* index.html. Entrypoint page of the app.
+* src/my-app/my-app.html. Source code for main element.
+* test/my-app/my-app_test.html. Tests for main element.
+* Run [command]#polymer serve --open# to see the polymer application running.
+
+[[board.project.setup]]
+== Add Vaadin Board Dependency
+
+You can use http://bower.io[Bower] to install Vaadin Board dependency by running the following command inside your project folder:
+
+[subs="normal"]
+----
+[prompt]#$# [command]#bower# install --save vaadin-board
+----
+This will install the latest available version of Vaadin Board.
+
+Add html import to your html element (src/my-app/my-app.html):
+
+[source, html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="import" href="bower_components/vaadin-board/vaadin-board.html">
+</head>
+</html>
+----
+[[board.project.setup.installing.license]]
+== Installing a License Key
+You need to install a license key in order to develop your application with Vaadin Board web component.
+
+You can purchase Vaadin Board or obtain a free trial key from the link:https://vaadin.com/pro/licenses[Vaadin Licenses page].
+You need to register in the Vaadin website to obtain the key.
+
+When you first time open the web page with Vaadin Board, you will see a pop-up that asks you to enter the license key.
+If the license is valid, it will be saved to the local storage of the browser and you will not see the pop-up again.
+
+[[board.project.setup.configuration]]
+== Basic Configuration
+
+[classname]#vaadin-board# is divided into rows, using [classname]#vaadin-board-row#.
+Rows are divided into columns.
+You can put any WebComponent or HTML element inside the [classname]#vaadin-board-row#.
+Every element inside the row can take from one to four columns.
+Vaadin Board rearranges child elements based on available space.
+In the example below every child [elementname]#div# will use 25% on Desktop, but will be
+rearranged to two rows when switching to tablet: one row with 2 items 50% of available space each and second row
+with 100% width item. Insert the following code in you html element, inside [elementname]#template# tag:
+
+[source, html]
+----
+    <vaadin-board>
+      <vaadin-board-row>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </vaadin-board-row>
+      <vaadin-board-row>
+        <div class="item">1</div>
+        <div class="item">2</div>
+      </vaadin-board-row>
+    </vaadin-board>
+----
+
+Then we can add styling to our content. Insert the following CSS , inside [elementname]#style# tag:
+
+[source, html]
+----
+.item {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fff;
+    text-align: center;
+    background-color: #cacaca;
+    height:100px;
+}
+----
+
+Run [command]#polymer serve --open# to see the following result:
+
+[[figure.board.getting.started.configuration]]
+.Vaadin Board Basic Configuration
+image::img/board-getting-started-configuration.png[]
+
+Vaadin Board rearranges child elements based on viewport size.
+You can change the size of the Web browser window to see how your application will look on different devices.
+
+Congratulations! You have your first Vaadin Board setup.
+Visit our link:https://vaadin.com/docs/-/part/board/board-overview.html[docs] and link://https://demo.vaadin.com/vaadin-board[demos] for more information.
