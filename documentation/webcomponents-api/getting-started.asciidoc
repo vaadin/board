@@ -46,7 +46,7 @@ You can use http://bower.io[Bower] to install Vaadin Board dependency by running
 
 This will install the latest available version of Vaadin Board.
 
-You can then import Vaadin Board inside your [elementname]`<html>` element (in `src/my-app/my-app.html`):
+You can then import Vaadin Board inside your [elementname]`html` element (in `src/my-app/my-app.html`):
 
 [source, html]
 ----
@@ -78,11 +78,11 @@ You can put any WebComponent or HTML element inside the [classname]`vaadin-board
 Every element inside the row can take from one to four columns.
 Vaadin Board rearranges child elements based on available space.
 
-In the example below every child [elementname]`<div>` will use 25% on Desktop, but will be
+In the example below every child [elementname]`div` will use 25% on Desktop, but will be
 rearranged to two rows when switching to tablet: one row with 2 items 50% of available space each and second row
 with 100% width item.
 
-Insert the following code in your [elementname]`<html>` element (again, in `src/my-app/my-app.html`), inside [elementname]`<template>` tag:
+Insert the following code in your [elementname]`html` element (again, in `src/my-app/my-app.html`), inside [elementname]`template` tag:
 
 [source, html]
 ----
@@ -100,7 +100,7 @@ Insert the following code in your [elementname]`<html>` element (again, in `src/
     </vaadin-board>
 ----
 
-Then we can add styling to our content. Insert the following CSS , inside the [elementname]`<style>` tag:
+Then we can add styling to our content. Insert the following CSS , inside the [elementname]`style` tag:
 
 [source, html]
 ----
