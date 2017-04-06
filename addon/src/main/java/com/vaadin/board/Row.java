@@ -5,10 +5,14 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import com.vaadin.annotations.HtmlImport;
+import com.vaadin.annotations.JavaScript;
 import com.vaadin.board.client.RowState;
 import com.vaadin.ui.AbstractComponentContainer;
 import com.vaadin.ui.Component;
 
+@JavaScript("frontend://webcomponentsjs/webcomponents-lite.js")
+@HtmlImport("frontend://vaadin-board/vaadin-board-row.html")
 public class Row extends AbstractComponentContainer {
 
     private final Board board;
