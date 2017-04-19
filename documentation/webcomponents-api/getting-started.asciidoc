@@ -12,9 +12,10 @@ layout: page
 In this tutorial, you will learn how to:
 
 1. <<Create a Polymer application>>
-2. <<Add the Vaadin Board dependency>>
-3. <<Install your license key>>
-4. <<Add the Vaadin Board component to your web page>>
+2. <<Install Vaadin Board>>
+3. <<Add the Vaadin Board dependency>>
+4. <<Install your license key>>
+5. <<Add the Vaadin Board component to your web page>>
 
 In this tutorial we will use https://www.polymer-project.org/2.0/docs/tools/polymer-cli[Polymer CLI] for creating the initial project. At the end of the tutorial, you should end up with the same code as found at https://github.com/vaadin/vaadin-board-getting-started[GitHub].
 
