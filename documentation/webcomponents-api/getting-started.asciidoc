@@ -24,13 +24,13 @@ In this tutorial we will use https://www.polymer-project.org/2.0/docs/tools/poly
 
 1. https://www.polymer-project.org/2.0/docs/tools/polymer-cli#install[Install Polymer CLI].
 2. Create a directory for your app project:
-
++
 [subs="normal"]
 ----
 [prompt]#$# [command]#mkdir# my-app
 [prompt]#$# [command]#cd# my-app
 ----
-
++
 3. Use Polymer to initialize a new application:
 
 [subs="normal"]
