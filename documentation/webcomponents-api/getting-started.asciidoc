@@ -37,7 +37,6 @@ In this tutorial we will use https://www.polymer-project.org/2.0/docs/tools/poly
 ----
 [prompt]#$# [command]#polymer# init
 ----
-+
 
 Polymer CLI will ask you a few questions to set up your app. Choose `polymer-2-application` as the starter template for your project. After the initialization process, Polymer CLI downloads dependencies and generates the following files and directories:
 
