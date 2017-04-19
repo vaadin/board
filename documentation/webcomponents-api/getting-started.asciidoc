@@ -13,7 +13,7 @@ In this tutorial, you will learn how to:
 
 1. <<Create a Polymer application>>
 2. <<Install Vaadin Board>>
-3. <<Add the Vaadin Board dependency>>
+3. <<Import Vaadin Board in your app>>
 4. <<Install your license key>>
 5. <<Add the Vaadin Board component to your web page>>
 
@@ -24,16 +24,20 @@ In this tutorial we will use https://www.polymer-project.org/2.0/docs/tools/poly
 
 1. https://www.polymer-project.org/2.0/docs/tools/polymer-cli#install[Install Polymer CLI].
 2. Create a directory for your app project:
+
 [subs="normal"]
 ----
 [prompt]#$# [command]#mkdir# my-app
 [prompt]#$# [command]#cd# my-app
 ----
-3. Initialize your application.
+
+3. Use Polymer to initialize a new application:
+
 [subs="normal"]
 ----
 [prompt]#$# [command]#polymer# init
 ----
+
 Polymer CLI will ask you a few questions to set up your app. Choose `polymer-2-application` as the starter template for your project. After the initialization process, Polymer CLI downloads dependencies and generates the following files and directories:
 
 `bower.json`:: Configuration file for Bower.
