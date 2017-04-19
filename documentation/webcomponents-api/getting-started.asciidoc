@@ -104,18 +104,18 @@ Insert the following code in your HTML element (again, in `src/my-app/my-app.htm
 
 [source, html]
 ----
-    <vaadin-board>
-      <vaadin-board-row>
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-      </vaadin-board-row>
-      <vaadin-board-row>
-        <div class="item">1</div>
-        <div class="item">2</div>
-      </vaadin-board-row>
-    </vaadin-board>
+<vaadin-board>
+  <vaadin-board-row>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <div class="item">1</div>
+    <div class="item">2</div>
+  </vaadin-board-row>
+</vaadin-board>
 ----
 
 Then we can add styling to our content. Insert the following CSS , inside the [elementname]`style` tag:
@@ -141,6 +141,7 @@ After these modifications your `src/my-app/my-app.html` should look like this:
 [source, html]
 ----
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/vaadin-board/vaadin-board.html">
 
 <dom-module id="my-app">
   <template>
@@ -193,6 +194,7 @@ After these modifications your `src/my-app/my-app.html` should look like this:
     window.customElements.define(MyApplication.is, MyApplication);
   </script>
 </dom-module>
+----
 
 Run [command]`polymer serve --open` to see the following result:
 
