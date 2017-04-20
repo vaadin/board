@@ -46,6 +46,7 @@ public class Board extends AbstractComponent implements HasComponents {
      * @returns a row instance which can be used for further configuration
      **/
     public Row addRow(Component... components) {
+        if(components.length > 4) throw new RuntimeException("to many components exception");
         Row row = new Row(this);
         rows.add(row);
         row.setParent(this);
