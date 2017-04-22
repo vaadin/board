@@ -21,6 +21,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <vaadin.widgetset.mode>local</vaadin.widgetset.mode>
+
+      <rapidpm-microservice.version>0.8.1-SNAPSHOT</rapidpm-microservice.version>
+
     </properties>
 
     <repositories>
@@ -39,6 +42,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.rapidpm.microservice</groupId>
+                <artifactId>rapidpm-microservice-bom</artifactId>
+                <version>${rapidpm-microservice.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -73,6 +85,19 @@
             <version>5.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.rapidpm.microservice</groupId>
+            <artifactId>rapidpm-microservice-modules-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.rapidpm.microservice</groupId>
+            <artifactId>rapidpm-microservice-modules-core-testutils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.rapidpm.microservice</groupId>
+            <artifactId>rapidpm-microservice-modules-optionals-metrics-health
+            </artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -98,18 +123,43 @@
                     <scanIntervalSeconds>2</scanIntervalSeconds>
                 </configuration>
             </plugin>
+            <!--<plugin>-->
+                <!--<groupId>com.vaadin</groupId>-->
+                <!--<artifactId>vaadin-maven-plugin</artifactId>-->
+                <!--<version>${vaadin.plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>update-theme</goal>-->
+                            <!--<goal>update-widgetset</goal>-->
+                            <!--<goal>compile</goal>-->
+                            <!--&lt;!&ndash; Comment out compile-theme goal to use on-the-fly theme compilation &ndash;&gt;-->
+                            <!--<goal>compile-theme</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.plugin.version}</version>
+                <configuration>
+                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                    <webappDirectory>
+                        ${basedir}/target/classes/VAADIN/widgetsets
+                    </webappDirectory>
+                    <draftCompile>true</draftCompile>
+                    <compileReport>false</compileReport>
+                    <!-- Change to PRETTY (or possibly DETAILED) to get
+                    unobfuscated client side stack traces. A better approach
+                    for debugging is to use Super Dev Mode -->
+                    <style>OBF</style>
+                    <strict>true</strict>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>update-theme</goal>
                             <goal>update-widgetset</goal>
                             <goal>compile</goal>
-                            <!-- Comment out compile-theme goal to use on-the-fly theme compilation -->
-                            <goal>compile-theme</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -182,7 +232,7 @@
                                     <goal>start</goal>
                                 </goals>
                                 <configuration>
-                                    <daemon>true</daemon>
+                                    <!--<daemon>true</daemon>-->
                                     <scanIntervalSeconds>0</scanIntervalSeconds>
                                 </configuration>
                             </execution>
