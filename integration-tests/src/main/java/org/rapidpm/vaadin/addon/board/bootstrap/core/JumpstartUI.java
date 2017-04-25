@@ -14,7 +14,7 @@ import com.vaadin.ui.UI;
  */
 @Theme("valo")
 //@Push
-@Widgetset("widgetset.AppWidgetSet")
+@Widgetset("AppWidgetSet")
 public class JumpstartUI extends UI {
 
     @Inject JumpstartUIComponentFactory jumpstartUIComponentFactory;

@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import org.rapidpm.vaadin.addon.board.bootstrap.core.JumpstartUIComponentFactory;
+import junit.com.vaadin.addon.board.BaseTestbenchTest;
 import junit.com.vaadin.addon.board.MicroserviceBaseTest;
 import com.vaadin.board.Board;
 import com.vaadin.server.VaadinRequest;
@@ -15,7 +16,7 @@ import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-public class ExampleFooUITest extends MicroserviceBaseTest {
+public class ExampleFooUITest extends BaseTestbenchTest {
 
     public static class MyUIComponentFactory implements JumpstartUIComponentFactory {
         @Override
@@ -39,8 +40,8 @@ public class ExampleFooUITest extends MicroserviceBaseTest {
     }
 
     @Before
-    public void setup() throws Exception {
-        super.setup();
+    public void setUp() throws Exception {
+        super.setUp();
         openURL();
     }
 

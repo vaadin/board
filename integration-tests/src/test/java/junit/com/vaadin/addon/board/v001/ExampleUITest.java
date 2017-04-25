@@ -1,9 +1,13 @@
 package junit.com.vaadin.addon.board.v001;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.rapidpm.vaadin.addon.board.bootstrap.core.JumpstartUIComponentFactory;
+import junit.com.vaadin.addon.board.BaseTestbenchTest;
 import junit.com.vaadin.addon.board.MicroserviceBaseTest;
 import com.vaadin.board.Board;
 import com.vaadin.server.VaadinRequest;
@@ -14,12 +18,12 @@ import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-public class ExampleUITest extends MicroserviceBaseTest {
+public class ExampleUITest extends BaseTestbenchTest {
 
 
   @Before
-  public void setup() throws Exception {
-    super.setup();
+  public void setUp() throws Exception {
+    super.setUp();
     openURL();
   }
 
@@ -28,9 +32,21 @@ public class ExampleUITest extends MicroserviceBaseTest {
     ButtonElement btn1 = $(ButtonElement.class).get(0);
     btn1.click();
     LabelElement label = $(LabelElement.class).get(0);
-
     Assert.assertEquals("Example", label.getText());
+
+
+    Client client = ClientBuilder.newClient();
+    final String generateBasicReqURL = baseRestURL(ComponentSwitcherRest.class);
+    System.out.println("generateBasicReqURL = " + generateBasicReqURL);
+    String val = client
+        .target(generateBasicReqURL)
+        .request()
+        .get(String.class);
+    System.out.println("val = " + val);
+    client.close();
+
   }
+
 
   @Test
   public void test002() {

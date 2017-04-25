@@ -1,4 +1,4 @@
-package com.vaadin.addon.board.testUI;
+package org.rapidpm.vaadin.addon.board.testui;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

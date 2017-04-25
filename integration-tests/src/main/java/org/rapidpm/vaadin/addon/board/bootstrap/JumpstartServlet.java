@@ -20,4 +20,9 @@ public class JumpstartServlet extends DDIVaadinServlet {
   public List<String> topLevelPackagesToActivate() {
     return Collections.emptyList();
   }
+
+
+  public static void setUIContent() {
+
+  }
 }
