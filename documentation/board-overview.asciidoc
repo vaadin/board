@@ -32,7 +32,7 @@ Add a build configuration to your link:https://www.polymer-project.org/2.0/docs/
     "html": {"minify": true}
   }]
 ----
-Running [command]`polymer build` in you application folder will create a traspiled version of your application.
+Running [command]`polymer build` in you application folder will create a transpiled version of your application.
 Your application will be transpiled and saved in build folder.
 
 Another option to transpile ES6 to ES5 is to use link:https://babeljs.io/[Babel].
