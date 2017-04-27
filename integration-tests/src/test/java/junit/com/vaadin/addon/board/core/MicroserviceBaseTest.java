@@ -1,4 +1,4 @@
-package junit.com.vaadin.addon.board;
+package junit.com.vaadin.addon.board.core;
 
 
 import static java.lang.System.getProperty;

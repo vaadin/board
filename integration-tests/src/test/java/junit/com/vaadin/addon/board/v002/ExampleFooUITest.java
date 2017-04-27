@@ -5,8 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import org.rapidpm.vaadin.addon.board.bootstrap.core.JumpstartUIComponentFactory;
-import junit.com.vaadin.addon.board.BaseTestbenchTest;
-import junit.com.vaadin.addon.board.MicroserviceBaseTest;
+import junit.com.vaadin.addon.board.core.BaseTestbenchTest;
 import com.vaadin.board.Board;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.testbench.elements.ButtonElement;

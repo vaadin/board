@@ -35,9 +35,7 @@ public class DDIVaadinServletService extends VaadinServletService {
             event -> event.getSession().addUIProvider(new DefaultUIProvider() {
                 @Override
                 public UI createInstance(final UICreateEvent event) {
-                    final UI instance = super.createInstance(event);
-                    System.out.println("instance = " + instance);
-                    return DI.activateDI(instance);
+                    return DI.activateDI(super.createInstance(event));
                 }
             }));
 

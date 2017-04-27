@@ -21,8 +21,6 @@ public abstract class DDIVaadinServlet extends VaadinServlet {
 
     }
 
-    //add Metrics here
-
     @Override
     protected VaadinServletService createServletService(
         final DeploymentConfiguration deploymentConfiguration)

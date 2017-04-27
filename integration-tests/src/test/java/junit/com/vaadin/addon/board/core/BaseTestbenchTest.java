@@ -1,4 +1,4 @@
-package junit.com.vaadin.addon.board;
+package junit.com.vaadin.addon.board.core;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,7 +23,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 /**
  * Created by svenruppert on 21.04.17.
  */
-public class BaseTestbenchTest extends MicroserviceBaseTest {
+public abstract class BaseTestbenchTest extends MicroserviceBaseTest {
 
   @Rule public TestName testName = new TestName();
 
@@ -40,16 +40,12 @@ public class BaseTestbenchTest extends MicroserviceBaseTest {
   public static final String CHROME = "chrome";
   public static final String PHANTOMJS = "phantomjs";
   public static final String JAVAFX = "javafx";
-  public static final String DEAFAULT_WEB_DRIVER = PHANTOMJS;
+  public static final String DEAFAULT_WEB_DRIVER = CHROME;
   private static RemoteWebDriver remoteWebDriver;
 
 
-  @BeforeClass
+  @BeforeClass // we have to make it dynamic some days ;-)
   public static void initWebdriver() throws Exception {
-    // TODO extract Factory
-//        System.setProperty("phantomjs.binary.path",
-//            "/Users/svenruppert/Applications/phantomjs-2.0.0-macosx/bin/phantomjs");
-
     final String operatingSystem = "osx";
     final String relativeBaseDir = "/_data/driver/";
     final String absolutePath = new File("").getAbsolutePath();
