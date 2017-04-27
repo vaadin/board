@@ -11,7 +11,7 @@ import com.vaadin.ui.Button;
 public class BoardTest {
 
   @Test(expected = java.lang.RuntimeException.class)
-  public void test001() throws Exception {
+  public void boardConfiguration_addFiveComponentsToRow_raiseException() throws Exception {
     final Board components = new Board();
     components.addRow(
         new Button(),
