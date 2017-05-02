@@ -20,6 +20,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<rapidpm-microservice.version>0.8.1-SNAPSHOT</rapidpm-microservice.version>
+
 	</properties>
 
 	<repositories>
@@ -38,6 +41,15 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.rapidpm.microservice</groupId>
+				<artifactId>rapidpm-microservice-bom</artifactId>
+				<version>${rapidpm-microservice.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -57,7 +69,32 @@
 			<artifactId>vaadin-client</artifactId>
 			<scope>provided</scope>
 		</dependency>
-	</dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.rapidpm.microservice</groupId>
+			<artifactId>rapidpm-microservice-modules-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.rapidpm.microservice</groupId>
+			<artifactId>rapidpm-microservice-modules-core-testutils</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.rapidpm.microservice</groupId>
+			<artifactId>rapidpm-microservice-modules-optionals-metrics-health
+			</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+  </dependencies>
 
 	<build>
 		<resources>

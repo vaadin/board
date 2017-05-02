@@ -1,6 +1,7 @@
 package com.vaadin.board;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -38,13 +39,14 @@ public class Board extends AbstractComponent implements HasComponents {
      * All the added components have cols set to 1, i.e. use one slot in the
      * row. The number of slots in the row is the number of added components.
      *
-     * @param the
+     * @param components
      *            components to add, no more than 4
      * @throws IllegalArgumentException
      *             if there are more than 4 components
      * @returns a row instance which can be used for further configuration
      **/
     public Row addRow(Component... components) {
+        if(components.length > 4) throw new RuntimeException("to many components exception");
         Row row = new Row(this);
         rows.add(row);
         row.setParent(this);
@@ -56,7 +58,7 @@ public class Board extends AbstractComponent implements HasComponents {
 
     @Override
     public Iterator<Component> iterator() {
-        return Collections.unmodifiableCollection((List) rows).iterator();
+        return Collections.<Component>unmodifiableCollection(rows).iterator();
     }
 
 }

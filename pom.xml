@@ -11,6 +11,13 @@
 
 	<modules>
 		<module>addon</module>
+		<module>integration-tests</module>
 	</modules>
+
+  <properties>
+  </properties>
+
+
+
 
 </project>
