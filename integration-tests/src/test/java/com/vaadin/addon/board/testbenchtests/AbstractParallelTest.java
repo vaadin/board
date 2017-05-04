@@ -1,5 +1,6 @@
 package com.vaadin.addon.board.testbenchtests;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -8,6 +9,7 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +29,9 @@ public abstract class AbstractParallelTest extends ParallelTest {
         openURL();
     }
 
+    public void compareScreen(String referenceName) throws IOException {
+        Assert.assertTrue( testBench(getDriver()).compareScreen(referenceName));
+    }
     protected List<DesiredCapabilities> allBrowsers = null;
 
     /**

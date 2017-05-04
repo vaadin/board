@@ -6,7 +6,7 @@ import org.junit.Test;
 import com.vaadin.addon.board.testUI.BasicUI;
 import com.vaadin.testbench.elements.ButtonElement;
 
-public class BasicUITest extends AbstractParallelTest {
+public class BasicTest extends AbstractParallelTest {
 
     @Override
     protected Class<?> getUIClass() {
