@@ -1,10 +1,10 @@
 package com.vaadin.addon.board.testbenchtests;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
@@ -17,7 +17,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.vaadin.testbench.annotations.BrowserConfiguration;
 import com.vaadin.testbench.annotations.RunOnHub;
-import com.vaadin.testbench.parallel.BrowserUtil;
 import com.vaadin.testbench.parallel.ParallelTest;
 
 @RunOnHub("tb3-hub.intra.itmill.com")
@@ -34,37 +33,17 @@ public abstract class AbstractParallelTest extends ParallelTest {
     }
     protected List<DesiredCapabilities> allBrowsers = null;
 
-    /**
-     * @return all supported browsers which are actively tested
-     */
-    public List<DesiredCapabilities> getAllBrowsers() {
-        final String FIREFOX_VERSION = "45";
-
-        if (allBrowsers == null) {
-            allBrowsers = new ArrayList<DesiredCapabilities>();
-            allBrowsers.add(BrowserUtil.ie11());
-
-            allBrowsers.add(BrowserUtil.chrome());
-            // Selenium doesn't support PhantomJS with Shadow DOM
-//            allBrowsers.add(BrowserUtil.phantomJS());
-
-            //Selenium has issue with firefox and webcomponents
-            // https://github.com/webcomponents/shadydom/issues/145
-//            DesiredCapabilities firefox = DesiredCapabilities.firefox();
-//            firefox.setVersion(FIREFOX_VERSION);
-//            firefox.setPlatform(Platform.WINDOWS);
-//            firefox.setCapability(FirefoxDriver.MARIONETTE, false);
-//            allBrowsers.add(firefox);
-
-
-
-        }
-        return Collections.unmodifiableList(allBrowsers);
-    }
-
     @BrowserConfiguration
     public List<DesiredCapabilities> getBrowserConfiguration() {
-        return getAllBrowsers();
+        final String CONFIG_PATH = "./tbconfig.json";
+        List<DesiredCapabilities> capabilities = null;
+        TestUtils utils = new TestUtils();
+        try {
+            capabilities = utils.getCapabilitiesFromFile(CONFIG_PATH);
+            return Collections.unmodifiableList(capabilities);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("Could not create capabilities from file");
+        }
     }
 
     public AbstractParallelTest() {
