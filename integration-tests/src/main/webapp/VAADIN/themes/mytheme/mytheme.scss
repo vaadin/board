@@ -34,5 +34,8 @@
 @mixin mytheme {
   @include valo;
 
-  // Insert your own theme rules here
+  //Add margin to exlude "loading indicator" from screenshot tests
+  .v-ui {
+    margin-top:20px;
+  }
 }

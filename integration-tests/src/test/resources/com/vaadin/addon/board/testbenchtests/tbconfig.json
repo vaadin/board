@@ -4,11 +4,6 @@
       "browserName": "Chrome",
       "platform": "ANY",
       "version": ""
-    },
-    {
-      "browserName": "Internet Explorer",
-      "platform": "ANY",
-      "version": "11"
     }
   ]
 }
