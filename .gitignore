@@ -1,6 +1,4 @@
-.iml
-
-target
+target/
 .classpath
 .project
 .settings
@@ -10,3 +8,8 @@ bower_components
 node
 yarn.lock
 .idea/
+**.iml
+**/themes/**/styles.css
+**/VAADIN/frontend/
+integration-tests/src/main/frontend/
+integration-tests/error-screenshots/
