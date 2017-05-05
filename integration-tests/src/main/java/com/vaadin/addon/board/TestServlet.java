@@ -5,11 +5,6 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.server.VaadinServlet;
 
-
-//@WebServlet(urlPatterns = "/*", name = "TestServlet", asyncSupported = true, initParams = {
-//    @WebInitParam(name = "UIProvider", value = "com.vaadin.addon.board.testUI.TestUIProvider")
-//})
-//@VaadinServletConfiguration(ui = ExampleUI.class, productionMode = false, widgetset ="com.vaadin.addon.board.AppWidgetSet")
 @WebServlet(value = "/*", asyncSupported = true, initParams = {
     @WebInitParam(name = "heartbeatInterval", value = "10"),
     @WebInitParam(name = "widgetset", value = "com.vaadin.addon.board.AppWidgetSet"),

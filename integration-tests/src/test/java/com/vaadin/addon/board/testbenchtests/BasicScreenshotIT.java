@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.vaadin.addon.board.testUI.BasicUI;
 
-public class BasicScreenshotTest extends AbstractParallelTest {
+public class BasicScreenshotIT extends AbstractParallelTest {
 
     @Override
     protected Class<?> getUIClass() {

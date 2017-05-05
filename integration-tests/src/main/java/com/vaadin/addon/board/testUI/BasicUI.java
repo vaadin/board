@@ -1,13 +1,10 @@
 package com.vaadin.addon.board.testUI;
 
-import com.vaadin.annotations.Theme;
 import com.vaadin.board.Board;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.UI;
 
-@Theme("mytheme")
-public class BasicUI extends UI {
+public class BasicUI extends AbstractTestUI {
 
     @Override
     protected void init(VaadinRequest request) {
