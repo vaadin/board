@@ -53,6 +53,25 @@ public class Board extends AbstractComponent implements HasComponents {
         return row;
     }
 
+    /**
+     * Removes a row from the board.
+     *
+     * All the added components have cols set to 1, i.e. use one slot in the
+     * row. The number of slots in the row is the number of added components.
+     *
+     * @param row to be removed
+     **/
+    public void removeRow(Row row) {
+        for (Row r : rows) {
+            if(r.equals(row)) {
+                row.setParent(null);
+                rows.remove(r);
+                markAsDirty();
+                break;
+            }
+        }
+    }
+
     @Override
     public Iterator<Component> iterator() {
         return Collections.unmodifiableCollection((List) rows).iterator();
