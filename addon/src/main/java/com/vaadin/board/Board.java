@@ -54,6 +54,17 @@ public class Board extends AbstractComponent implements HasComponents {
         return row;
     }
 
+    /**
+     * Removes the given row from the board.
+     *
+     * @param row to be removed
+     **/
+    public void removeRow(Row row) {
+        row.setParent(null);
+        rows.remove(row);
+        markAsDirty();
+    }
+
     @Override
     public Iterator<Component> iterator() {
         return Collections.<Component>unmodifiableCollection(rows).iterator();
