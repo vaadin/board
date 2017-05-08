@@ -11,6 +11,7 @@ import com.vaadin.client.LayoutManager;
 import com.vaadin.client.StyleConstants;
 import com.vaadin.client.communication.StateChangeEvent;
 import com.vaadin.client.ui.AbstractHasComponentsConnector;
+import com.vaadin.shared.Connector;
 import com.vaadin.shared.ui.Connect;
 
 @Connect(Row.class)
@@ -51,7 +52,11 @@ public class RowConnector extends AbstractHasComponentsConnector {
     @Override
     public void onStateChanged(StateChangeEvent stateChangeEvent) {
         super.onStateChanged(stateChangeEvent);
-        // TODO Cols support
+        for (Connector connector : getState().cols.keySet()) {
+            int colsValue = getState().cols.get(connector);
+            String strValue = "" + colsValue;
+            ((ComponentConnector) connector).getWidget().getElement().setAttribute("board-cols", strValue);
+        }
     }
 
     @Override
