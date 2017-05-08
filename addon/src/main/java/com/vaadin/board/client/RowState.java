@@ -8,4 +8,15 @@ import com.vaadin.shared.ui.AbstractComponentContainerState;
 
 public class RowState extends AbstractComponentContainerState {
     public Map<Connector, Integer> cols = new HashMap<>();
+
+    public int usedColAmount(){
+        return cols.values().stream().mapToInt(value -> value).sum();
+    }
+
+
+
+
+
+
+
 }
