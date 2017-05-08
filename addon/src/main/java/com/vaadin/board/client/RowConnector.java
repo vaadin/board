@@ -55,7 +55,10 @@ public class RowConnector extends AbstractHasComponentsConnector {
         for (Connector connector : getState().cols.keySet()) {
             int colsValue = getState().cols.get(connector);
             String strValue = "" + colsValue;
-            ((ComponentConnector) connector).getWidget().getElement().setAttribute("board-cols", strValue);
+            ((ComponentConnector) connector)
+                .getWidget()
+                .getElement()
+                .setAttribute("board-cols", strValue);
         }
     }
 
