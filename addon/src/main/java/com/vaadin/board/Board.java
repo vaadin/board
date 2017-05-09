@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.vaadin.annotations.HtmlImport;
-import com.vaadin.annotations.JavaScript;
 import com.vaadin.board.client.BoardState;
 import com.vaadin.ui.AbstractComponent;
 import com.vaadin.ui.Component;
@@ -37,7 +36,7 @@ public class Board extends AbstractComponent implements HasComponents {
      * All the added components have cols set to 1, i.e. use one slot in the
      * row. The number of slots in the row is the number of added components.
      *
-     * @param the
+     * @param components
      *            components to add, no more than 4
      * @throws IllegalArgumentException
      *             if there are more than 4 components
@@ -53,9 +52,21 @@ public class Board extends AbstractComponent implements HasComponents {
         return row;
     }
 
+    /**
+     * Removes the given row from the board.
+     *
+     * @param row to be removed
+     **/
+    public void removeRow(Row row) {
+        if (rows.remove(row)) {
+            row.setParent(null);
+            markAsDirty();
+        }
+    }
+
     @Override
     public Iterator<Component> iterator() {
-        return Collections.unmodifiableCollection((List) rows).iterator();
+        return Collections.<Component>unmodifiableCollection(rows).iterator();
     }
 
 }

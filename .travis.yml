@@ -1,7 +1,9 @@
 language: java
 jdk: oraclejdk8
 dist: trusty
-
+install: ./.travis.install.sh
+addons:
+  google-chrome: latest
 deploy:
   - provider: script
     script: ./.travis.deploy.sh
