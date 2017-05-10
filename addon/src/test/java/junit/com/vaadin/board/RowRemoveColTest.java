@@ -12,7 +12,7 @@ import com.vaadin.ui.Button;
 public class RowRemoveColTest {
 
     @Test
-    public void test001()
+    public void testAdd4Remove4Add3()
         throws Exception {
 
         Row row = new Board().addRow();
@@ -25,7 +25,7 @@ public class RowRemoveColTest {
 
 
     @Test
-    public void test002()
+    public void testAdd4SetTo2Add2()
         throws Exception {
 
         Row row = new Board().addRow();
