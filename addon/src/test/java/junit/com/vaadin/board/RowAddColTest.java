@@ -15,39 +15,40 @@ import com.vaadin.ui.Button;
 public class RowAddColTest {
 
     @Test
-    public void test001()
+    public void testFrom1To4()
         throws Exception {
         IntStream
             .range(1, 5)
-            .forEach(i -> assertEquals(i, createButtonRow().apply(i).usedColAmount()));
+            .peek(p -> {System.out.println("test001 p = " + p);})
+            .forEachOrdered(i -> assertEquals(i, createButtonRow().apply(i).usedColAmount()));
     }
 
     @Test(expected = IllegalStateException.class)
-    public void test002()
+    public void testWithColValue5_IllegalStateException()
         throws Exception {
         new Board().addRow().addComponent(new Button(), 5);
     }
 
     @Test(expected = IllegalStateException.class)
-    public void test003()
+    public void testWithColValue0_IllegalStateException()
         throws Exception {
         new Board().addRow().addComponent(new Button(), 0);
     }
 
     @Test(expected = IllegalStateException.class)
-    public void test004()
+    public void testWithColValueMinusOne_IllegalStateException()
         throws Exception {
         new Board().addRow().addComponent(new Button(), -1);
     }
 
     @Test(expected = IllegalStateException.class)
-    public void test005A()
+    public void testWithOnePlus4_IllegalStateException()
         throws Exception {
         createButtonRow().apply(1).addComponent(new Button(), 4);
     }
 
     @Test()
-    public void test005B()
+    public void testWithOnePlus3()
         throws Exception {
         createButtonRow().apply(1).addComponent(new Button(), 3);
     }
