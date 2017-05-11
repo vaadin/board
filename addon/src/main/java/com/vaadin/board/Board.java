@@ -1,13 +1,11 @@
 package com.vaadin.board;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import com.vaadin.annotations.HtmlImport;
-import com.vaadin.annotations.JavaScript;
 import com.vaadin.board.client.BoardState;
 import com.vaadin.ui.AbstractComponent;
 import com.vaadin.ui.Component;
@@ -55,21 +53,14 @@ public class Board extends AbstractComponent implements HasComponents {
     }
 
     /**
-     * Removes a row from the board.
-     *
-     * All the added components have cols set to 1, i.e. use one slot in the
-     * row. The number of slots in the row is the number of added components.
+     * Removes the given row from the board.
      *
      * @param row to be removed
      **/
     public void removeRow(Row row) {
-        for (Row r : rows) {
-            if(r.equals(row)) {
-                row.setParent(null);
-                rows.remove(r);
-                markAsDirty();
-                break;
-            }
+        if (rows.remove(row)) {
+            row.setParent(null);
+            markAsDirty();
         }
     }
 

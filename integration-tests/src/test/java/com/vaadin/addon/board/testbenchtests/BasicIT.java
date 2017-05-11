@@ -23,11 +23,15 @@ public class BasicIT extends AbstractParallelTest {
         ButtonElement btn3 = $(ButtonElement.class).caption("Button 3").first();
         ButtonElement btn4 = $(ButtonElement.class).caption("Button 4").first();
 
-        Assert.assertEquals("Btn1 should have Y == 0", board.getLocation().getY(), btn1.getLocation().getY());
-        Assert.assertEquals("Btn2 should have Y == 0", board.getLocation().getY(), btn2.getLocation().getY());
+        Assert.assertEquals("Btn1 should have same Y as the board Y coordinate",
+            board.getLocation().getY(), btn1.getLocation().getY());
+        Assert.assertEquals("Btn2 should have same Y as the board Y coordinate",
+            board.getLocation().getY(), btn2.getLocation().getY());
 
-        Assert.assertEquals("Btn3 should have Y == btn1.height", btn1.getSize().getHeight(), btn3.getLocation().getY());
-        Assert.assertEquals("Btn3 should have Y == btn1.height", btn2.getSize().getHeight(), btn4.getLocation().getY());
+        Assert.assertEquals("Btn3 should have Y == board.location + btn1.height",
+            board.getLocation().getY() + btn1.getSize().getHeight(), btn3.getLocation().getY());
+        Assert.assertEquals("Btn4 should have Y == board.location +btn2.height",
+            board.getLocation().getY() + btn2.getSize().getHeight(), btn4.getLocation().getY());
     }
 
 }
