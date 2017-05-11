@@ -18,8 +18,7 @@ import com.vaadin.testbench.annotations.RunLocally;
 import com.vaadin.testbench.annotations.RunOnHub;
 import com.vaadin.testbench.parallel.ParallelTest;
 
-//@RunOnHub("tb3-hub.intra.itmill.com")
-@RunLocally
+@RunOnHub("tb3-hub.intra.itmill.com")
 public abstract class AbstractParallelTest extends ParallelTest {
 
     @Before
