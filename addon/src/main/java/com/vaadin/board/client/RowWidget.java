@@ -8,4 +8,8 @@ public class RowWidget extends FlowPanel {
         super("vaadin-board-row");
     }
 
+    public native void redraw()/*-{
+        this.redraw();
+    }-*/;
+
 }
