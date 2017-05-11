@@ -160,6 +160,7 @@
 				</pluginRepository>
 			</pluginRepositories>
 		</profile>
+
 	</profiles>
 
 </project>
