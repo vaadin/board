@@ -19,7 +19,6 @@ public class RowAddColTest {
         throws Exception {
         IntStream
             .range(1, 5)
-            .peek(p -> {System.out.println("test001 p = " + p);})
             .forEachOrdered(i -> assertEquals(i, createButtonRow().apply(i).usedColAmount()));
     }
 
