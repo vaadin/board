@@ -18,10 +18,8 @@ import com.vaadin.shared.ui.Connect;
 public class RowConnector extends AbstractHasComponentsConnector {
 
     public RowConnector() {
-
-        addIronResizeListener(getWidget().getElement(), () -> {
-            LayoutManager.get(getConnection()).setNeedsMeasureRecursively(this);
-        });
+        addIronResizeListener(getWidget().getElement(),
+                              () -> LayoutManager.get(getConnection()).setNeedsMeasureRecursively(this));
     }
 
     private native void addIronResizeListener(Element element, Command listener)
