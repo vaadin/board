@@ -35,7 +35,8 @@ public class ColRemoveUI extends AbstractTestUI {
         row2.setCols(btnA, 2);
 
         Button removeColForBtnAButton = new Button("Remove col Btn A", e -> {
-            row2.removeColsForComponent(btnA);
+
+            board.removeCol(row2, btnA);
         });
 
 

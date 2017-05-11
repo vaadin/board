@@ -169,7 +169,6 @@ public class Row extends AbstractComponentContainer {
         checkIfValueSmallerOrEqualFour(component, cols);
         checkNewColValue(component, cols);
         checkIfNotNegative(component, cols);
-//        getState(true).cols.compute(component, (connector, integer) -> cols);
         getState(true).cols.put(component, cols);
     }
 
