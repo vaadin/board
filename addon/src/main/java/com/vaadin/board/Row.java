@@ -169,8 +169,8 @@ public class Row extends AbstractComponentContainer {
         checkIfValueSmallerOrEqualFour(component, cols);
         checkNewColValue(component, cols);
         checkIfNotNegative(component, cols);
-
-        getState(true).cols.compute(component, (connector, integer) -> cols);
+//        getState(true).cols.compute(component, (connector, integer) -> cols);
+        getState(true).cols.put(component, cols);
     }
 
     @Override
@@ -190,13 +190,9 @@ public class Row extends AbstractComponentContainer {
         return Collections.unmodifiableCollection(components).iterator();
     }
 
-//    public Stream<Component> stream() {
-//        return components.stream();
-//    }
-
     public void removeColsForComponent(Component component) {
         setCols(component, 1);
-        markAsDirty();
+        //markAsDirty();
     }
 
     //    public void redraw() {
