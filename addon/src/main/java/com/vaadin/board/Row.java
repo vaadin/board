@@ -17,15 +17,6 @@ import com.vaadin.ui.Component;
 @HtmlImport("frontend://vaadin-board/vaadin-board-row.html")
 public class Row extends AbstractComponentContainer {
 
-//    BiConsumer<Component, Integer> checkNewColValue = (component, cols) -> {
-//        Map<Connector, Integer> map = getState().cols;
-//        Integer integer = map.getOrDefault(component, 0);
-//        int colValueForComponent = integer;
-//        int sum = getState().usedColAmount();
-//        if ((sum - colValueForComponent + cols) > 4)
-//            throw new IllegalStateException("new total amount of cols would be bigger 4");
-//    };
-
     private void checkNewColValue(Component component, int cols) {
         Map<Connector, Integer> map = getState().cols;
         Integer integer = map.getOrDefault(component, 0);
@@ -36,13 +27,6 @@ public class Row extends AbstractComponentContainer {
 
     }
 
-//    BiConsumer<Component, Integer> checkIfContained = (component, cols) -> {
-//        Map<Connector, Integer> map = getState().cols;
-//        if (!map.containsKey(component)) {
-//            throw new IllegalStateException("try to modify a component that is not in row " + component);
-//        }
-//    };
-
     private void checkIfContained(Component component, int cols){
         Map<Connector, Integer> map = getState().cols;
         if (!map.containsKey(component)) {
@@ -51,27 +35,15 @@ public class Row extends AbstractComponentContainer {
 
     }
 
-//    BiConsumer<Component, Integer> checkIfNotNegative = (component, cols) -> {
-//        if (cols < 1)
-//            throw new IllegalStateException("please , don´t try to add negative values or zero for cols");
-//    };
-
     private void checkIfNotNegative(Component component, int cols){
         if (cols < 1)
             throw new IllegalStateException("please , don´t try to add negative values or zero for cols");
     }
 
-//    BiConsumer<Component, Integer> checkIfValueSmallerOrEqualFour = (component, cols) -> {
-//        if (cols > 4)
-//            throw new IllegalStateException("max col value you can set is 4");
-//    };
-
     private void checkIfValueSmallerOrEqualFour(Component component, int cols){
                 if (cols > 4)
                     throw new IllegalStateException("max col value you can set is 4");
     }
-
-
 
     private final Board board;
     protected List<Component> components = new ArrayList<>();
@@ -134,11 +106,6 @@ public class Row extends AbstractComponentContainer {
      *     than 4 child components
      **/
     public void addComponent(Component component, int cols) {
-//        checkIfValueSmallerOrEqualFour
-//            .andThen(checkNewColValue)
-//            .andThen(checkIfNotNegative)
-//            .accept(component, cols);
-
         checkIfValueSmallerOrEqualFour(component, cols);
         checkNewColValue(component, cols);
         checkIfNotNegative(component, cols);
@@ -199,10 +166,6 @@ public class Row extends AbstractComponentContainer {
      * or if the number of columns is less than 1
      **/
     public void setCols(Component component, int cols) {
-//        checkIfContained
-//            .andThen(checkIfNotNegative)
-//            .accept(component, cols);
-
         checkIfValueSmallerOrEqualFour(component, cols);
         checkNewColValue(component, cols);
         checkIfNotNegative(component, cols);
@@ -227,9 +190,9 @@ public class Row extends AbstractComponentContainer {
         return Collections.unmodifiableCollection(components).iterator();
     }
 
-    public Stream<Component> stream() {
-        return components.stream();
-    }
+//    public Stream<Component> stream() {
+//        return components.stream();
+//    }
 
     public void removeColsForComponent(Component component) {
         setCols(component, 1);
