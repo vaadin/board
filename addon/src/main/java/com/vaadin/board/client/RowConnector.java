@@ -19,7 +19,7 @@ public class RowConnector extends AbstractHasComponentsConnector {
 
     public RowConnector() {
         addIronResizeListener(getWidget().getElement(),
-                              () -> LayoutManager.get(getConnection()).setNeedsMeasureRecursively(this));
+                              () -> LayoutManager.get(RowConnector.this.getConnection()).setNeedsMeasureRecursively(RowConnector.this));
     }
 
     private native void addIronResizeListener(Element element, Command listener)
@@ -42,7 +42,6 @@ public class RowConnector extends AbstractHasComponentsConnector {
     @Override
     protected void updateWidgetStyleNames() {
         super.updateWidgetStyleNames();
-
         // Setting v-widget sets display: inline-block which is not wanted
         setWidgetStyleName(StyleConstants.UI_WIDGET, false);
     }
