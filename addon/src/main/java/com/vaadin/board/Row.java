@@ -5,8 +5,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.stream.Stream;
 
 import com.vaadin.annotations.HtmlImport;
 import com.vaadin.board.client.RowState;
@@ -22,12 +20,17 @@ public class Row extends AbstractComponentContainer {
         Integer integer = map.getOrDefault(component, 0);
         int colValueForComponent = integer;
         int sum = getState().usedColAmount();
+        System.out.println(" ============== ");
+        System.out.println("component = " + component);
+        System.out.println("sum - colValueForComponent + cols = "
+                           + sum + " - " + colValueForComponent + " + " + cols + " = "
+                           + (sum - colValueForComponent + cols));
         if ((sum - colValueForComponent + cols) > 4)
             throw new IllegalStateException("new total amount of cols would be bigger 4");
 
     }
 
-    private void checkIfContained(Component component, int cols){
+    private void checkIfContained(Component component, int cols) {
         Map<Connector, Integer> map = getState().cols;
         if (!map.containsKey(component)) {
             throw new IllegalStateException("try to modify a component that is not in row " + component);
@@ -35,14 +38,14 @@ public class Row extends AbstractComponentContainer {
 
     }
 
-    private void checkIfNotNegative(Component component, int cols){
+    private void checkIfNotNegative(Component component, int cols) {
         if (cols < 1)
             throw new IllegalStateException("please , don´t try to add negative values or zero for cols");
     }
 
-    private void checkIfValueSmallerOrEqualFour(Component component, int cols){
-                if (cols > 4)
-                    throw new IllegalStateException("max col value you can set is 4");
+    private void checkIfValueSmallerOrEqualFour(Component component, int cols) {
+        if (cols > 4)
+            throw new IllegalStateException("max col value you can set is 4");
     }
 
     private final Board board;
@@ -76,10 +79,10 @@ public class Row extends AbstractComponentContainer {
     @Override
     public void addComponents(Component... components) {
         // Overridden only for javadoc
-//        for (Component component : components) {
-//            addComponent(component);
-//        }
-        super.addComponents(components); //Quest - not sure if this is really the same
+        for (Component component : components) {
+            addComponent(component);
+        }
+        //        super.addComponents(components); //Quest - not sure if this is really the same
     }
 
     @Override
@@ -90,7 +93,7 @@ public class Row extends AbstractComponentContainer {
     @Override
     public void removeComponent(Component c) {
         super.removeComponent(c);
-        if(components.contains(c)){
+        if (components.contains(c)) {
             components.remove(c);
             getState(true).cols.remove(c);
         }
@@ -117,7 +120,6 @@ public class Row extends AbstractComponentContainer {
         getState(true).cols.put(component, 1);
         setCols(component, cols);
     }
-
 
     /**
      * Gets the number of columns the given component spans.
@@ -165,7 +167,10 @@ public class Row extends AbstractComponentContainer {
         checkIfValueSmallerOrEqualFour(component, cols);
         checkNewColValue(component, cols);
         checkIfNotNegative(component, cols);
-        getState(true).cols.put(component, cols);
+
+        Map<Connector, Integer> map = getState(true).cols;
+        map.put(component, cols);
+//        getState(true).cols = map;
     }
 
     @Override
@@ -187,12 +192,5 @@ public class Row extends AbstractComponentContainer {
 
     public void removeColsForComponent(Component component) {
         setCols(component, 1);
-        //markAsDirty();
     }
-
-    //    public void redraw() {
-    //        RowState state = getState();
-    //
-    //    }
-
 }
