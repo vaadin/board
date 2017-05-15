@@ -20,8 +20,7 @@ You can put any Vaadin component inside the [classname]#Row#.
 Every element inside the row can take from one to four columns.
 Vaadin Board rearranges child elements based on available space.
 In the example below every child [classname]#Label# will use 25% on Desktop, but will be
-rearranged to two rows when switching to tablet: one row with 2 items 50% of available space each and second row
-with 100% width item, see example below.
+rearranged to two rows when switching to tablet: both with 2 items that take 50% of available space each, see example below.
 
 [source, java]
 ----
@@ -54,12 +53,6 @@ You can specify the element to occupy from one to four columns, by using [method
         row.setCols(lbl1, 2);
         setContent(board);
 ----
-
-[NOTE]
-By default, mobile browsers have fixed viewport size.
-Set the viewport size to follow the screen-width of the device.
-Add Viewport annotation for the UI class:
-@Viewport("width=device-width")
 
 [[board.basic-use.nested]]
 == Nested Rows
