@@ -17,6 +17,10 @@ public class Row extends AbstractComponentContainer {
 
     private void checkNewColValue(Component component, int cols) {
         Map<Connector, Integer> map = getState().cols;
+        for (Map.Entry<Connector, Integer> entry : map.entrySet()) {
+            System.out.println("entry.getKey() = " + entry.getKey());
+            System.out.println("entry.getValue() = " + entry.getValue());
+        }
         Integer integer = map.getOrDefault(component, 0);
         int colValueForComponent = integer;
         int sum = getState().usedColAmount();
@@ -170,7 +174,7 @@ public class Row extends AbstractComponentContainer {
 
         Map<Connector, Integer> map = getState(true).cols;
         map.put(component, cols);
-//        getState(true).cols = map;
+        getState(true).cols = map;
     }
 
     @Override

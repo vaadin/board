@@ -37,9 +37,9 @@ public class ColRemoveUI extends AbstractTestUI {
         Button removeColForBtnAButton = new Button("Remove col Btn A",
                                                    e -> board.removeCol(row2, btnA));
         Button addColForBtnAButton = new Button("Add col(2) Btn A",
-                                                e -> row1.setCols(btnA, 2));
+                                                e -> row2.setCols(btnA, 2));
         Button exceptionColForBtnAButton = new Button("Add col(5) Btn A",
-                                                      e -> row1.setCols(btnA, 5));
+                                                      e -> row2.setCols(btnA, 5));
 
 
 
@@ -50,7 +50,7 @@ public class ColRemoveUI extends AbstractTestUI {
         row3.setCols(btnA1, 2);
 
         Button resizeColForBtnA1Button = new Button("Resize col Btn A1",
-                                                    e -> row3.setCols(btnA1, 2));
+                                                    e -> row3.setCols(btnA1, 3));
 
         VerticalLayout layout = new VerticalLayout();
         layout.addComponents(board,
