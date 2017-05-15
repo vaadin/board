@@ -68,10 +68,6 @@ public class Board extends AbstractComponent implements HasComponents {
 
     public void removeCol(Row row, Component component){
         row.removeColsForComponent(component);
-
-//        markAsDirtyRecursive();
-        if(rows.contains(row)){
-        }
     }
 
     @Override

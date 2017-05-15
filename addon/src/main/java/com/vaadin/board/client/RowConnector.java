@@ -48,6 +48,7 @@ public class RowConnector extends AbstractHasComponentsConnector {
 
     @Override
     public void onStateChanged(StateChangeEvent stateChangeEvent) {
+        System.out.println("stateChangeEvent = " + stateChangeEvent);
         super.onStateChanged(stateChangeEvent);
         for (Connector connector : getState().cols.keySet()) {
             int colsValue = getState().cols.get(connector);
@@ -57,6 +58,7 @@ public class RowConnector extends AbstractHasComponentsConnector {
                 .getElement()
                 .setAttribute("board-cols", strValue);
         }
+        getWidget().redraw(getWidget().getElement());
     }
 
     @Override
