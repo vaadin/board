@@ -91,7 +91,8 @@ Add the following dependency declaration just before the end tag ([elementname]#
 
 It is recommended to use the latest version available, the version number can be checked at link:https://vaadin.com/directory#!addon/vaadin-board[Vaadin Directory].
 
-You need to add vaadin frontend plugin to you POM.xml. Add the following code into the plugins section of your POM.xml:
+You need to add vaadin frontend plugin to your POM.xml. Add the following code into the plugins section of your POM.xml:
+
 
 [subs="normal"]
 ----
@@ -200,10 +201,13 @@ Then we can add styling to our content. Insert the following CSS to your theme, 
 
 [NOTE]
 By default, mobile browsers have fixed viewport size.
-Set the viewport size to follow the screen-width of the device.
-Add Viewport annotation for the UI class:
-@Viewport("width=device-width")
+Set the viewport size to follow the screen-width of the device by adding the [classname]#@Viewport# annotation to the UI class:
 
+[source, java]
+----
+@Viewport("width=device-width")
+public class MyUI extends UI {
+----
 
 Start your server to see the result:
 
