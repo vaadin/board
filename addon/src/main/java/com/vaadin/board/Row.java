@@ -76,9 +76,10 @@ public class Row extends AbstractComponentContainer {
     @Override
     public void addComponents(Component... components) {
         // Overridden only for javadoc
-        for (Component component : components) {
-            addComponent(component);
-        }
+//        for (Component component : components) {
+//            addComponent(component);
+//        }
+        super.addComponents(components); //Quest - not sure if this is really the same
     }
 
     @Override
@@ -89,9 +90,10 @@ public class Row extends AbstractComponentContainer {
     @Override
     public void removeComponent(Component c) {
         super.removeComponent(c);
-        //TODO check if Component is part ow Row Model
-        components.remove(c);
-        getState(true).cols.remove(c);
+        if(components.contains(c)){
+            components.remove(c);
+            getState(true).cols.remove(c);
+        }
     }
 
     /**
@@ -116,12 +118,6 @@ public class Row extends AbstractComponentContainer {
         setCols(component, cols);
     }
 
-    /**
-     * Will give you the amount of used cols for this row.
-     */
-    public int usedColAmount() {
-        return getState().usedColAmount();
-    }
 
     /**
      * Gets the number of columns the given component spans.
@@ -146,7 +142,7 @@ public class Row extends AbstractComponentContainer {
     ;
 
     @Override
-    public RowState getState() {
+    protected RowState getState() {
         return (RowState) super.getState();
     }
 

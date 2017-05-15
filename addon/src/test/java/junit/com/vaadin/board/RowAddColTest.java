@@ -2,11 +2,15 @@ package junit.com.vaadin.board;
 
 import static junit.com.vaadin.board.RowTestHelperFunctions.createButtonRow;
 import static org.junit.Assert.assertEquals;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.stream.IntStream;
 
 import org.junit.Test;
 
 import com.vaadin.board.Board;
+import com.vaadin.board.Row;
+import com.vaadin.board.client.RowState;
 import com.vaadin.ui.Button;
 
 /**
@@ -19,7 +23,20 @@ public class RowAddColTest {
         throws Exception {
         IntStream
             .range(1, 5)
-            .forEachOrdered(i -> assertEquals(i, createButtonRow().apply(i).usedColAmount()));
+            .forEachOrdered(i -> {
+                Row apply = createButtonRow().apply(i);
+                int usedColAmount = -1;
+                try {
+                    Method getState = Row.class.getDeclaredMethod("getState");
+                    getState.setAccessible(true);
+                    RowState rowState = (RowState) getState.invoke(apply);
+                    usedColAmount = rowState.usedColAmount();
+                } catch (NoSuchMethodException
+                    | IllegalAccessException
+                    | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+                assertEquals(i, usedColAmount);});
     }
 
     @Test(expected = IllegalStateException.class)
