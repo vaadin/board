@@ -187,6 +187,12 @@ public class Row extends AbstractComponentContainer {
 
     public void removeColsForComponent(Component component) {
         setCols(component, 1);
+        //markAsDirty();
     }
+
+    //    public void redraw() {
+    //        RowState state = getState();
+    //
+    //    }
 
 }
