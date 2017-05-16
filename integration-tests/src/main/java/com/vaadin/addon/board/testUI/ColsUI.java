@@ -15,7 +15,6 @@ public class ColsUI extends AbstractTestUI {
     protected void init(VaadinRequest request) {
 
         Board board = new Board();
-//                board.setWidth(1024, Unit.PIXELS);
         board.setSizeFull();
 
         Button btnA = new Button("Button A");
