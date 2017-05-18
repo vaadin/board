@@ -21,7 +21,7 @@ import com.vaadin.ui.RadioButtonGroup;
 /**
  * http://localhost:8080/Dash24BasicComponents$ButtonUI
  */
-public class Dash24BasicComponents {
+public class Dash27BasicComponents {
 
     public static class ButtonUI extends Dash27BasicUI {
         @Override
@@ -119,11 +119,11 @@ public class Dash24BasicComponents {
 
         @Override
         protected void init(VaadinRequest vaadinRequest) {
-//            setContent(
-//                testLayout()
-//                    .apply(
-//                        Stream.of(nextGrid(), nextGrid(), nextGrid())));
-            setContent(nextGrid());
+            setContent(
+                testLayout()
+                    .apply(
+                        Stream.of(nextGrid(), nextGrid(), nextGrid())));
+//            setContent(nextGrid());
         }
 
         private Grid<Person> nextGrid() {
