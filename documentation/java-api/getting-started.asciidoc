@@ -9,7 +9,7 @@ layout: page
 
 IMPORTANT: Vaadin Board is is currently being developed and only available in the Vaadin Framework 8.1 prerelease versions, starting from 8.1.0.alpha7.
 There is no vaadin-archetype available for this version, so you can not generate the application.
-You need to add vaadin prerelease repository to your POM.xml and change vaadin dependencies to 8.1.0.alpha7 in you existing vaadin project.
+You need to add vaadin prerelease repository to your POM.xml and change vaadin dependencies to 8.1.0.alpha7 in your existing vaadin project.
 
 
 In this chapter, we are going to create a simple Vaadin application and use the Vaadin Board add-on to create a responsive layout.
