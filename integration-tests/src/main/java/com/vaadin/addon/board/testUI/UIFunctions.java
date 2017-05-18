@@ -44,7 +44,6 @@ public interface UIFunctions {
             final Row row = board.addRow(components);
 
             final AbstractOrderedLayout baseLayout = new VerticalLayout();
-            //            baseLayout.setWidth((4 * 128), Unit.PIXELS);
 
             final Button button1024 = new Button(PX1024,
                                                  (ClickListener) clickEvent
