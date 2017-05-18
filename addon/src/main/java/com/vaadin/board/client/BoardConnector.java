@@ -10,6 +10,7 @@ import com.vaadin.board.Board;
 import com.vaadin.client.ComponentConnector;
 import com.vaadin.client.ConnectorHierarchyChangeEvent;
 import com.vaadin.client.LayoutManager;
+import com.vaadin.client.communication.StateChangeEvent;
 import com.vaadin.client.ui.AbstractHasComponentsConnector;
 import com.vaadin.shared.ui.Connect;
 
@@ -35,6 +36,13 @@ public class BoardConnector extends AbstractHasComponentsConnector {
         return (BoardState) super.getState();
     }
 
+    @Override
+    public void onStateChanged(StateChangeEvent stateChangeEvent) {
+        super.onStateChanged(stateChangeEvent);
+        getLayoutManager().addElementResizeListener(getWidget().getElement(), e-> {
+            getWidget().redraw(getWidget().getElement());
+        });
+    }
     @Override
     public void updateCaption(ComponentConnector connector) {
         // Captions are not supported

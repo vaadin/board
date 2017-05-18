@@ -19,4 +19,8 @@ public class BoardWidget extends FlowPanel {
         }
         super.add(child, container);
     }
+
+    public native void redraw(Element elem)/*-{
+        elem.redraw();
+    }-*/;
 }
