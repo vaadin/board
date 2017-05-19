@@ -16,7 +16,18 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.Flash;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.Link;
+import com.vaadin.ui.Panel;
+import com.vaadin.ui.PasswordField;
+import com.vaadin.ui.ProgressBar;
 import com.vaadin.ui.RadioButtonGroup;
+import com.vaadin.ui.RichTextArea;
+import com.vaadin.ui.Slider;
+import com.vaadin.ui.TabSheet;
+import com.vaadin.ui.Tree;
+import com.vaadin.ui.TwinColSelect;
+import com.vaadin.ui.Video;
 
 /**
  * http://localhost:8080/Dash24BasicComponents$ButtonUI
@@ -138,5 +149,88 @@ public class Dash27BasicComponents {
             return grid;
         }
     }
+
+    public static class LabelUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> Label.class;
+        }
+    }
+
+    //Todo demo data
+    public static class LinkUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> Link.class;
+        }
+    }
+
+
+    public static class PanelUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> Panel.class;
+        }
+    }
+
+    public static class PasswordFieldUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> PasswordField.class;
+        }
+    }
+
+    //Todo demo data
+    public static class ProgressBarUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> ProgressBar.class;
+        }
+    }
+
+    public static class SliderUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> Slider.class;
+        }
+    }
+
+    //Todo demo data
+    public static class TabSheetUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> TabSheet.class;
+        }
+    }
+
+    //Todo demo data
+    public static class TreeUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> Tree.class;
+        }
+    }
+
+    //Todo resizing problem - video https://youtu.be/CY3_h9cNCPQ
+    public static class TwinColSelectUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> TwinColSelect.class;
+        }
+    }
+
+    //Todo resizing problem - video https://youtu.be/3IVZDP0PEa0
+    public static class VideoUI extends Dash27BasicUI {
+        @Override
+        protected Supplier<Class<? extends Component>> nextClass() {
+            return () -> Video.class;
+        }
+    }
+
+
+
+
+
+
 
 }
