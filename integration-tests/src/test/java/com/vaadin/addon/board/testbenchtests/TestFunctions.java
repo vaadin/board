@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.rapidpm.frp.model.Result;
+import com.vaadin.addon.frp.Result;
 import com.vaadin.testbench.By;
 
 /**
@@ -56,6 +56,7 @@ public class TestFunctions {
 
     Assert.assertTrue("before < after", widthBefore < widthAfter);
     Assert.assertTrue("after > reset", widthAfter > widthReset);
+    Assert.assertTrue("after > before", widthAfter > widthBefore);
     Assert.assertTrue("before == reset", widthBefore == widthReset);
   };
 

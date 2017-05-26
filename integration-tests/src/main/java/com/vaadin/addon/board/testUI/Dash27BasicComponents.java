@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import com.vaadin.server.ExternalResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
@@ -27,6 +28,7 @@ import com.vaadin.ui.Slider;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.TwinColSelect;
+import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Video;
 
 /**
@@ -108,6 +110,7 @@ public class Dash27BasicComponents {
         }
     }
 
+
     public static class GridUI extends AbstractTestUI{
 
         private static class Person{
@@ -133,11 +136,11 @@ public class Dash27BasicComponents {
             setContent(
                 testLayout()
                     .apply(
-                        Stream.of(nextGrid(), nextGrid(), nextGrid())));
+                        Stream.of(nextElement(), nextElement(), nextElement())));
 //            setContent(nextGrid());
         }
 
-        private Grid<Person> nextGrid() {
+        private Grid<Person> nextElement() {
             List<Person> people = Arrays.asList(
                 new Person("Nicolaus Copernicus", 1543),
                 new Person("Galileo Galilei", 1564),
@@ -157,11 +160,19 @@ public class Dash27BasicComponents {
         }
     }
 
-    //Todo demo data
-    public static class LinkUI extends Dash27BasicUI {
+    public static class LinkUI extends AbstractTestUI {
+
         @Override
-        protected Supplier<Class<? extends Component>> nextClass() {
-            return () -> Link.class;
+        protected void init(VaadinRequest vaadinRequest) {
+            setContent(
+                testLayout()
+                    .apply(
+                        Stream.of(nextElement(), nextElement(), nextElement())));
+        }
+
+        private Link nextElement() {
+            return new Link("http://vaadin.com/",
+                new ExternalResource("http://vaadin.com/"));
         }
     }
 
@@ -180,11 +191,17 @@ public class Dash27BasicComponents {
         }
     }
 
-    //Todo demo data
-    public static class ProgressBarUI extends Dash27BasicUI {
+    public static class ProgressBarUI extends AbstractTestUI {
         @Override
-        protected Supplier<Class<? extends Component>> nextClass() {
-            return () -> ProgressBar.class;
+        protected void init(VaadinRequest vaadinRequest) {
+            setContent(
+                testLayout()
+                    .apply(
+                        Stream.of(nextElement(), nextElement(), nextElement())));
+        }
+
+        private ProgressBar nextElement() {
+            return new ProgressBar(0.8f);
         }
     }
 
@@ -195,19 +212,31 @@ public class Dash27BasicComponents {
         }
     }
 
-    //Todo demo data
-    public static class TabSheetUI extends Dash27BasicUI {
+    //Todo resizing problem - video https://youtu.be/cLtxYeYXzVU
+    public static class TabSheetUI extends AbstractTestUI {
         @Override
-        protected Supplier<Class<? extends Component>> nextClass() {
-            return () -> TabSheet.class;
+        protected void init(VaadinRequest vaadinRequest) {
+            setContent(
+                testLayout()
+                    .apply(
+                        Stream.of(nextElement(), nextElement(), nextElement())));
         }
-    }
 
-    //Todo demo data
-    public static class TreeUI extends Dash27BasicUI {
-        @Override
-        protected Supplier<Class<? extends Component>> nextClass() {
-            return () -> Tree.class;
+        private TabSheet nextElement() {
+            TabSheet tabSheet = new TabSheet();
+            tabSheet.addTab(nextTabElement()).setCaption("Tab 001");
+            tabSheet.addTab(nextTabElement()).setCaption("Tab 002");
+            return tabSheet;
+        }
+
+        private VerticalLayout nextTabElement(){
+            VerticalLayout tab = new VerticalLayout();
+            tab.setSizeFull();
+            tab.addComponents(
+                new Button("TabButton 1"),
+                new Button("TabButton 2")
+                );
+            return tab;
         }
     }
 
