@@ -14,21 +14,27 @@ import com.vaadin.ui.Tree;
  *
  */
 public class Dash27TreeUI extends AbstractTestUI {
+
+  boolean simple = false;
+
+  //DASH-113
   @Override
   protected void init(VaadinRequest request) {
-//    setContent(
-//        testLayout().apply(
-//            Stream.of(
-//                nextElement(),
-//                nextElement(),
-//                nextElement())
-//        ));
 
-    Board board = new Board();
-    board.setSizeFull();
-    board.addRow(nextElement());
-    setContent(board);
-
+    if (simple) {
+      Board board = new Board();
+      board.setSizeFull();
+      board.addRow(nextElement());
+      setContent(board);
+    } else {
+      setContent(
+          testLayout().apply(
+              Stream.of(
+                  nextElement(),
+                  nextElement(),
+                  nextElement())
+          ));
+    }
   }
 
   private Tree<String> nextElement() {
@@ -37,12 +43,12 @@ public class Dash27TreeUI extends AbstractTestUI {
     TreeData<String> treeData = new TreeData<>();
 
 // Couple of childless root items
-    treeData.addItem(null,"Mercury");
-    treeData.addItem(null,"Venus");
+    treeData.addItem(null, "Mercury");
+    treeData.addItem(null, "Venus");
 
 // Items with hierarchy
-    treeData.addItem(null,"Earth");
-    treeData.addItem("Earth","The Moon");
+    treeData.addItem(null, "Earth");
+    treeData.addItem("Earth", "The Moon");
 
     TreeDataProvider inMemoryDataProvider = new TreeDataProvider<>(treeData);
     tree.setDataProvider(inMemoryDataProvider);

@@ -103,6 +103,7 @@ public class Dash27BasicComponents {
         }
     }
 
+    //DASH-107
     public static class FlashUI extends Dash27BasicUI {
         @Override
         protected Supplier<Class<? extends Component>> nextClass() {
@@ -111,6 +112,7 @@ public class Dash27BasicComponents {
     }
 
 
+    //DASH-106
     public static class GridUI extends AbstractTestUI{
 
         private static class Person{
@@ -213,6 +215,7 @@ public class Dash27BasicComponents {
     }
 
     //Todo resizing problem - video https://youtu.be/cLtxYeYXzVU
+    //DASH-112
     public static class TabSheetUI extends AbstractTestUI {
         @Override
         protected void init(VaadinRequest vaadinRequest) {
@@ -241,6 +244,7 @@ public class Dash27BasicComponents {
     }
 
     //Todo resizing problem - video https://youtu.be/CY3_h9cNCPQ
+    //DASH-109
     public static class TwinColSelectUI extends Dash27BasicUI {
         @Override
         protected Supplier<Class<? extends Component>> nextClass() {
@@ -249,6 +253,7 @@ public class Dash27BasicComponents {
     }
 
     //Todo resizing problem - video https://youtu.be/3IVZDP0PEa0
+    //DASH-108
     public static class VideoUI extends Dash27BasicUI {
         @Override
         protected Supplier<Class<? extends Component>> nextClass() {

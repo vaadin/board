@@ -79,6 +79,7 @@ public class Dash27LayoutComponents {
     }
   }
 
+  //DASH-114
   public static class GridLayoutUI extends AbstractTestUI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {

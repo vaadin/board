@@ -118,6 +118,7 @@ public class Dash27ChartComponents {
   }
 
 
+  //DASH-110
   public static class PieChartUI extends Dash27BasicChartUI {
 
 
@@ -286,6 +287,7 @@ public class Dash27ChartComponents {
   }
 
 
+  //DASH-111
   public static class GaugeUI extends Dash27BasicChartUI {
     protected Component getChart() {
       final Chart chart = new Chart();
