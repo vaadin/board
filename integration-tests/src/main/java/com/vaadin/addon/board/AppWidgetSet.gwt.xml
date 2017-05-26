@@ -46,4 +46,6 @@
     <inherits name="com.vaadin.board.BoardWidgetSet" />
 
     <inherits name="com.vaadin.DefaultWidgetSet" />
+
+    <inherits name="com.vaadin.addon.charts.Widgetset" />
 </module>
