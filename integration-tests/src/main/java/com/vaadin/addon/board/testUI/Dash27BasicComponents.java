@@ -41,7 +41,7 @@ public class Dash27BasicComponents {
         }
     }
 
-    public static class ComboboxUI extends Dash27BasicUI {
+    public static class ComboBoxUI extends Dash27BasicUI {
         @Override
         protected Supplier<Class<? extends Component>> nextClass() {
             return () -> ComboBox.class;

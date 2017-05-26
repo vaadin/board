@@ -26,6 +26,8 @@
         <vaadin.board.version>1.0-SNAPSHOT</vaadin.board.version>
     </properties>
 
+
+
     <repositories>
         <repository>
             <id>vaadin-addons</id>
@@ -35,6 +37,7 @@
                 <id>vaadin-prereleases</id>
                 <url>http://maven.vaadin.com/vaadin-prereleases</url>
             </repository>
+
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -94,8 +97,15 @@
         <dependency>
             <groupId>org.rapidpm</groupId>
             <artifactId>rapidpm-functional-reactive</artifactId>
-            <version>0.0.4</version>
+            <version>0.0.5-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-charts</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
 
 
     </dependencies>

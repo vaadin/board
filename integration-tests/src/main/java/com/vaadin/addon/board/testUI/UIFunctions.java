@@ -2,12 +2,21 @@ package com.vaadin.addon.board.testUI;
 
 import static com.vaadin.server.Sizeable.Unit.PIXELS;
 import static java.lang.String.valueOf;
+import static java.lang.System.setProperty;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
+import java.util.Properties;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import org.rapidpm.frp.functions.CheckedBiFunction;
+import org.rapidpm.frp.functions.CheckedExecutor;
+import org.rapidpm.frp.functions.CheckedFunction;
 import org.rapidpm.frp.model.Result;
 
 import com.vaadin.board.Board;
@@ -29,6 +38,7 @@ public interface UIFunctions {
     String PX1024 = "setSizeFull";
     String PX0512 = (3 * 128) + "px";
     String SWITCH = "switch";
+    String ID_PREFIX = "test-component-";
 
     static <T extends Component> Function<Stream<T>, AbstractOrderedLayout> testLayout() {
         return (stream) -> {
@@ -40,6 +50,12 @@ public interface UIFunctions {
                 .peek(Sizeable::setSizeFull)
                 .map(e -> (Component) e)
                 .toArray(Component[]::new);
+
+
+            int i = 0;
+            for (final Component component : components) {
+                component.setId(ID_PREFIX + i++);
+            }
 
             final Row row = board.addRow(components);
 
@@ -90,4 +106,23 @@ public interface UIFunctions {
             .map(Result::get);
     }
 
+
+    CheckedFunction<String, Properties> readProperties = (filename) -> {
+        try (
+            final FileInputStream fis = new FileInputStream(new File(filename));
+            final BufferedInputStream bis = new BufferedInputStream(fis)) {
+            final Properties properties = new Properties();
+            properties.load(bis);
+
+            return properties;
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
+    };
+
+    CheckedExecutor readTestbenchProperties = () -> readProperties
+        .apply("config/testbench.properties")
+        .ifPresent(p -> p.forEach((key, value) -> setProperty((String) key, (String) value))
+        );
 }
