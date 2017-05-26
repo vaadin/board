@@ -11,9 +11,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebElement;
-import org.rapidpm.frp.model.Pair;
 import com.vaadin.addon.board.testUI.AbstractTestUI;
 import com.vaadin.addon.board.testUI.Dash27BasicComponents;
+import com.vaadin.addon.frp.Pair;
 import com.vaadin.testbench.elements.AbstractComponentElement;
 import com.vaadin.testbench.elements.ButtonElement;
 import com.vaadin.testbench.elements.CheckBoxElement;
@@ -31,8 +31,8 @@ import com.vaadin.testbench.elements.ProgressBarElement;
 import com.vaadin.testbench.elements.RadioButtonGroupElement;
 import com.vaadin.testbench.elements.SliderElement;
 import com.vaadin.testbench.elements.TabSheetElement;
-import com.vaadin.testbench.elements.TreeElement;
 import com.vaadin.testbench.elements.TwinColSelectElement;
+import com.vaadin.testbench.elements.VideoElement;
 
 /**
  *
@@ -60,8 +60,9 @@ public class Dash27BasicComponentsIT {
         new Pair<>(RadioButtonGroupElement.class, Dash27BasicComponents.RadioButtonGroupUI.class),
         new Pair<>(SliderElement.class, Dash27BasicComponents.SliderUI.class),
         new Pair<>(TabSheetElement.class, Dash27BasicComponents.TabSheetUI.class),
-        new Pair<>(TreeElement.class, Dash27BasicComponents.TreeUI.class),
-        new Pair<>(TwinColSelectElement.class, Dash27BasicComponents.TwinColSelectUI.class)
+//        new Pair<>(TreeElement.class, Dash27BasicComponents.TreeUI.class), // Tree is a Composite
+        new Pair<>(TwinColSelectElement.class, Dash27BasicComponents.TwinColSelectUI.class),
+        new Pair<>(VideoElement.class, Dash27BasicComponents.VideoUI.class)
     );
   }
 
@@ -79,15 +80,15 @@ public class Dash27BasicComponentsIT {
       return testCombos().toArray();
     }
 
-
     public Supplier<WebElement> middleElementSupplier() {
       return () -> $(middleElementClass())
-          .id(ID_PREFIX + 2);
+          .id(ID_PREFIX + 1);
     }
 
     @Test
     public void testGenericWidth() throws Exception {
       genericAssertWidth.accept(buttonSwitchSupplier, middleElementSupplier());
+      compareScreen(nextTestCombo.getT2().getSimpleName());
     }
 
     @Test

@@ -57,11 +57,7 @@ public class Row extends AbstractComponentContainer {
     @Override
     public void addComponents(Component... components) {
         // Overridden only for javadoc
-//        super.addComponents(components);
-        for (Component component : components) {
-            addComponent(component);
-        }
-
+        super.addComponents(components);
     }
 
     @Override

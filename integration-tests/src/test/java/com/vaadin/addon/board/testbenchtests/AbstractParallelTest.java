@@ -141,4 +141,9 @@ public abstract class AbstractParallelTest extends ParallelTest {
         getDriver().get(url);
     }
 
+    protected void openURLWithAppRestart() {
+        String url = getTestUrl() + "?restartApplication";
+        getDriver().get(url);
+    }
+
 }

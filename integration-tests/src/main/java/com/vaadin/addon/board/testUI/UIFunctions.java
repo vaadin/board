@@ -14,11 +14,11 @@ import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import org.rapidpm.frp.functions.CheckedBiFunction;
-import org.rapidpm.frp.functions.CheckedExecutor;
-import org.rapidpm.frp.functions.CheckedFunction;
-import org.rapidpm.frp.model.Result;
 
+import com.vaadin.addon.frp.CheckedBiFunction;
+import com.vaadin.addon.frp.CheckedExecutor;
+import com.vaadin.addon.frp.CheckedFunction;
+import com.vaadin.addon.frp.Result;
 import com.vaadin.board.Board;
 import com.vaadin.board.Row;
 import com.vaadin.server.Sizeable;
