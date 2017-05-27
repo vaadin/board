@@ -26,7 +26,8 @@ import com.vaadin.testbench.elements.ButtonElement;
 import com.vaadin.testbench.parallel.Browser;
 import com.vaadin.testbench.parallel.ParallelTest;
 
-@RunOnHub("tb3-hub.intra.itmill.com")
+//@RunOnHub("tb3-hub.intra.itmill.com")
+@RunLocally(value = Browser.CHROME)
 public abstract class AbstractParallelTest extends ParallelTest {
 
     @BeforeClass

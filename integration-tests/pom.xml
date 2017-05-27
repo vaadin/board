@@ -25,6 +25,8 @@
         <vaadin.widgetset.mode>local</vaadin.widgetset.mode>
         <vaadin.board.version>1.0-SNAPSHOT</vaadin.board.version>
         <vaadin-testbench.version>5.1-SNAPSHOT</vaadin-testbench.version>
+        <vaadin-charts.version>4.0.0</vaadin-charts.version>
+        <vaadin-spreadsheet.version>2.0.1</vaadin-spreadsheet.version>
     </properties>
 
 
@@ -97,9 +99,14 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-charts</artifactId>
-            <version>4.0.0</version>
+            <version>${vaadin-charts.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spreadsheet</artifactId>
+            <version>${vaadin-spreadsheet.version}</version>
+        </dependency>
 
 
     </dependencies>
