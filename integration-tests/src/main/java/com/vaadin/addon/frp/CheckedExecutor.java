@@ -3,7 +3,7 @@ package com.vaadin.addon.frp;
 import java.util.function.Function;
 
 /**
- * Created by svenruppert on 25.04.17.
+ *
  */
 @FunctionalInterface
 public interface CheckedExecutor extends Function<Void, Result<Void>> {
