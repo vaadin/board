@@ -15,7 +15,7 @@ import com.vaadin.ui.Component;
 /**
  *
  */
-public abstract class Dash27BasicChartUI extends AbstractTestUI {
+public abstract class CompatBasicChartUI extends AbstractTestUI {
 
   protected abstract Supplier<Component> nextChartInstance();
 
@@ -23,7 +23,7 @@ public abstract class Dash27BasicChartUI extends AbstractTestUI {
   protected void init(VaadinRequest vaadinRequest) {
     setContent(
         testLayout()
-            .apply(Stream.of( //todo make it dynamic
+            .apply(Stream.of(
                 nextChartInstance().get(),
                 nextChartInstance().get(),
                 nextChartInstance().get())));

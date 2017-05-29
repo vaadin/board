@@ -14,7 +14,7 @@ import com.vaadin.ui.HorizontalLayout;
 
 //Todo - video https://youtu.be/n3jXzy2EvaU
 //DASH-116
-public class Dash27SpreadsheetUI extends AbstractTestUI {
+public class CompatSpreadsheetUI extends AbstractTestUI {
 
   boolean simple = false;
 

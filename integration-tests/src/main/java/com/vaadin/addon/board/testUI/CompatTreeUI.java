@@ -13,7 +13,7 @@ import com.vaadin.ui.Tree;
 /**
  *
  */
-public class Dash27TreeUI extends AbstractTestUI {
+public class CompatTreeUI extends AbstractTestUI {
 
   boolean simple = false;
 

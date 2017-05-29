@@ -55,9 +55,9 @@ import com.vaadin.ui.UI;
 /**
  *
  */
-public class Dash27ChartComponents {
+public class CompatChartComponents {
 
-  public static class BarChartUI extends Dash27BasicChartUI {
+  public static class BarChartUI extends CompatBasicChartUI {
 
     @Override
     protected Supplier<Component> nextChartInstance() {
@@ -119,7 +119,7 @@ public class Dash27ChartComponents {
 
 
   //DASH-110
-  public static class PieChartUI extends Dash27BasicChartUI {
+  public static class PieChartUI extends CompatBasicChartUI {
 
 
     protected Component getChart() {
@@ -170,7 +170,7 @@ public class Dash27ChartComponents {
   }
 
 
-  public static class CombinationsMultipleAxisUI extends Dash27BasicChartUI {
+  public static class CombinationsMultipleAxisUI extends CompatBasicChartUI {
 
 
     protected Component getChart() {
@@ -288,7 +288,7 @@ public class Dash27ChartComponents {
 
 
   //DASH-111
-  public static class GaugeUI extends Dash27BasicChartUI {
+  public static class GaugeUI extends CompatBasicChartUI {
     protected Component getChart() {
       final Chart chart = new Chart();
       chart.setWidth(500, Unit.PIXELS);
@@ -409,7 +409,7 @@ public class Dash27ChartComponents {
   }
 
 
-  public static class TimeLineUI extends Dash27BasicChartUI {
+  public static class TimeLineUI extends CompatBasicChartUI {
     protected Component getChart() {
       final Chart chart = new Chart();
       chart.setHeight("450px");
@@ -610,7 +610,7 @@ public class Dash27ChartComponents {
           ObjectMapper mapper = new ObjectMapper();
           jsonData = mapper.readValue(
               new InputStreamReader(
-                  Dash27ChartComponents.class.getResourceAsStream(
+                  CompatChartComponents.class.getResourceAsStream(
                       filename)), JsonData.class);
 
         } catch (IOException e) {

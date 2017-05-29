@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebElement;
 import com.vaadin.addon.board.testUI.AbstractTestUI;
-import com.vaadin.addon.board.testUI.Dash27BasicComponents;
+import com.vaadin.addon.board.testUI.CompatBasicComponents;
 import com.vaadin.addon.frp.Pair;
 import com.vaadin.testbench.elements.AbstractComponentElement;
 import com.vaadin.testbench.elements.ButtonElement;
@@ -37,32 +37,32 @@ import com.vaadin.testbench.elements.VideoElement;
 /**
  *
  */
-public class Dash27BasicComponentsIT {
+public class CompatBasicComponentsIT {
 
   static Stream<
       Pair<
           Class<? extends AbstractComponentElement>,
           Class<? extends AbstractTestUI>>> testCombos() {
     return Stream.of(
-        new Pair<>(ButtonElement.class, Dash27BasicComponents.ButtonUI.class),
-        new Pair<>(CheckBoxGroupElement.class, Dash27BasicComponents.CheckBoxGroupUI.class),
-        new Pair<>(CheckBoxElement.class, Dash27BasicComponents.CheckBoxUI.class),
-        new Pair<>(ColorPickerElement.class, Dash27BasicComponents.ColorPickerUI.class),
-        new Pair<>(ComboBoxElement.class, Dash27BasicComponents.ComboBoxUI.class),
-        new Pair<>(DateFieldElement.class, Dash27BasicComponents.DateFieldUI.class),
-        new Pair<>(FlashElement.class, Dash27BasicComponents.FlashUI.class),
-        new Pair<>(GridElement.class, Dash27BasicComponents.GridUI.class),
-        new Pair<>(LabelElement.class, Dash27BasicComponents.LabelUI.class),
-        new Pair<>(LinkElement.class, Dash27BasicComponents.LinkUI.class),
-        new Pair<>(PanelElement.class, Dash27BasicComponents.PanelUI.class),
-        new Pair<>(PasswordFieldElement.class, Dash27BasicComponents.PasswordFieldUI.class),
-        new Pair<>(ProgressBarElement.class, Dash27BasicComponents.ProgressBarUI.class),
-        new Pair<>(RadioButtonGroupElement.class, Dash27BasicComponents.RadioButtonGroupUI.class),
-        new Pair<>(SliderElement.class, Dash27BasicComponents.SliderUI.class),
-        new Pair<>(TabSheetElement.class, Dash27BasicComponents.TabSheetUI.class),
-//        new Pair<>(TreeElement.class, Dash27BasicComponents.TreeUI.class), // Tree is a Composite
-        new Pair<>(TwinColSelectElement.class, Dash27BasicComponents.TwinColSelectUI.class),
-        new Pair<>(VideoElement.class, Dash27BasicComponents.VideoUI.class)
+        new Pair<>(ButtonElement.class, CompatBasicComponents.ButtonUI.class),
+        new Pair<>(CheckBoxGroupElement.class, CompatBasicComponents.CheckBoxGroupUI.class),
+        new Pair<>(CheckBoxElement.class, CompatBasicComponents.CheckBoxUI.class),
+        new Pair<>(ColorPickerElement.class, CompatBasicComponents.ColorPickerUI.class),
+        new Pair<>(ComboBoxElement.class, CompatBasicComponents.ComboBoxUI.class),
+        new Pair<>(DateFieldElement.class, CompatBasicComponents.DateFieldUI.class),
+        new Pair<>(FlashElement.class, CompatBasicComponents.FlashUI.class),
+        new Pair<>(GridElement.class, CompatBasicComponents.GridUI.class),
+        new Pair<>(LabelElement.class, CompatBasicComponents.LabelUI.class),
+        new Pair<>(LinkElement.class, CompatBasicComponents.LinkUI.class),
+        new Pair<>(PanelElement.class, CompatBasicComponents.PanelUI.class),
+        new Pair<>(PasswordFieldElement.class, CompatBasicComponents.PasswordFieldUI.class),
+        new Pair<>(ProgressBarElement.class, CompatBasicComponents.ProgressBarUI.class),
+        new Pair<>(RadioButtonGroupElement.class, CompatBasicComponents.RadioButtonGroupUI.class),
+        new Pair<>(SliderElement.class, CompatBasicComponents.SliderUI.class),
+        new Pair<>(TabSheetElement.class, CompatBasicComponents.TabSheetUI.class),
+//        new Pair<>(TreeElement.class, CompatBasicComponents.TreeUI.class), // Tree is a Composite
+        new Pair<>(TwinColSelectElement.class, CompatBasicComponents.TwinColSelectUI.class),
+        new Pair<>(VideoElement.class, CompatBasicComponents.VideoUI.class)
     );
   }
 

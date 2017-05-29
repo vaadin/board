@@ -11,7 +11,7 @@ import com.vaadin.ui.Component;
 /**
  *
  */
-public abstract class Dash27BasicUI extends AbstractTestUI {
+public abstract class CompatBasicUI extends AbstractTestUI {
 
     protected abstract Supplier<Class<? extends Component>> nextClass();
 

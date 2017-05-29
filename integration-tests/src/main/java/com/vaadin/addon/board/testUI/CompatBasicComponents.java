@@ -34,30 +34,30 @@ import com.vaadin.ui.Video;
 /**
  * http://localhost:8080/Dash24BasicComponents$ButtonUI
  */
-public class Dash27BasicComponents {
+public class CompatBasicComponents {
 
-  public static class ButtonUI extends Dash27BasicUI {
+  public static class ButtonUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> Button.class;
     }
   }
 
-  public static class ComboBoxUI extends Dash27BasicUI {
+  public static class ComboBoxUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> ComboBox.class;
     }
   }
 
-  public static class CheckBoxUI extends Dash27BasicUI {
+  public static class CheckBoxUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> CheckBox.class;
     }
   }
 
-  public static class ColorPickerUI extends Dash27BasicUI {
+  public static class ColorPickerUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> ColorPicker.class;
@@ -96,7 +96,7 @@ public class Dash27BasicComponents {
     }
   }
 
-  public static class DateFieldUI extends Dash27BasicUI {
+  public static class DateFieldUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> DateField.class;
@@ -104,7 +104,7 @@ public class Dash27BasicComponents {
   }
 
   //DASH-107
-  public static class FlashUI extends Dash27BasicUI {
+  public static class FlashUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> Flash.class;
@@ -155,7 +155,7 @@ public class Dash27BasicComponents {
     }
   }
 
-  public static class LabelUI extends Dash27BasicUI {
+  public static class LabelUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> Label.class;
@@ -179,14 +179,14 @@ public class Dash27BasicComponents {
   }
 
 
-  public static class PanelUI extends Dash27BasicUI {
+  public static class PanelUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> Panel.class;
     }
   }
 
-  public static class PasswordFieldUI extends Dash27BasicUI {
+  public static class PasswordFieldUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> PasswordField.class;
@@ -207,7 +207,7 @@ public class Dash27BasicComponents {
     }
   }
 
-  public static class SliderUI extends Dash27BasicUI {
+  public static class SliderUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> Slider.class;
@@ -245,7 +245,7 @@ public class Dash27BasicComponents {
 
   //Todo resizing problem - video https://youtu.be/CY3_h9cNCPQ
   //DASH-109
-  public static class TwinColSelectUI extends Dash27BasicUI {
+  public static class TwinColSelectUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> TwinColSelect.class;
@@ -254,7 +254,7 @@ public class Dash27BasicComponents {
 
   //Todo resizing problem - video https://youtu.be/3IVZDP0PEa0
   //DASH-108
-  public static class VideoUI extends Dash27BasicUI {
+  public static class VideoUI extends CompatBasicUI {
     @Override
     protected Supplier<Class<? extends Component>> nextClass() {
       return () -> Video.class;

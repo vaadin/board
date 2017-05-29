@@ -17,7 +17,7 @@ import com.vaadin.ui.VerticalLayout;
 /**
  *
  */
-public class Dash27LayoutComponents {
+public class CompatLayoutComponents {
 
 
 

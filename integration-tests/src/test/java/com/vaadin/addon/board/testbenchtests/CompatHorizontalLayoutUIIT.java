@@ -1,27 +1,23 @@
 package com.vaadin.addon.board.testbenchtests;
 
 import static com.vaadin.addon.board.testUI.UIFunctions.ID_PREFIX;
-import static com.vaadin.addon.board.testUI.UIFunctions.SWITCH;
 import static com.vaadin.addon.board.testbenchtests.TestFunctions.genericAssertHeight;
 import static com.vaadin.addon.board.testbenchtests.TestFunctions.genericAssertWidth;
 
-import java.util.function.BiConsumer;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import com.vaadin.addon.board.testUI.Dash27LayoutComponents;
+import com.vaadin.addon.board.testUI.CompatLayoutComponents;
 import com.vaadin.testbench.elements.ButtonElement;
 
 /**
  *
  */
-public class Dash27HorizontalLayoutUIIT extends AbstractParallelTest {
+public class CompatHorizontalLayoutUIIT extends AbstractParallelTest {
   @Override
   protected Class<?> getUIClass() {
-    return Dash27LayoutComponents.HorizontalLayoutUI.class;
+    return CompatLayoutComponents.HorizontalLayoutUI.class;
   }
 
 
