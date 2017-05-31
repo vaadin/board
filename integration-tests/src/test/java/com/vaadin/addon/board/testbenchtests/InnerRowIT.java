@@ -6,23 +6,21 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
-import com.vaadin.addon.board.testUI.InnerRowUI;
+import com.vaadin.addon.board.testUI.InnerRowCompUI;
 import com.vaadin.testbench.By;
-import com.vaadin.testbench.annotations.RunLocally;
 import com.vaadin.testbench.elements.ButtonElement;
-import com.vaadin.testbench.parallel.Browser;
 
 public class InnerRowIT extends AbstractParallelTest {
 
     @Override
     protected Class<?> getUIClass() {
-        return InnerRowUI.class;
+        return InnerRowCompUI.class;
     }
 
     @Test
     public void oneRowBoard_addInnerRow_hasOneInnerRow() {
 
-        ButtonElement addButton = $(ButtonElement.class).id(InnerRowUI.BUTTON_ADD_ID);
+        ButtonElement addButton = $(ButtonElement.class).id(InnerRowCompUI.BUTTON_ADD_ID);
         addButton.click();
 
         WebElement board =getDriver().findElement(By.tagName("vaadin-board"));
@@ -38,8 +36,8 @@ public class InnerRowIT extends AbstractParallelTest {
     @Test
     public void oneRowBoard_addThenRemoveInnerRow_hasNoInnerRow() {
 
-        ButtonElement addButton = $(ButtonElement.class).id(InnerRowUI.BUTTON_ADD_ID);
-        ButtonElement rmvButton = $(ButtonElement.class).id(InnerRowUI.BUTTON_RMV_ID);
+        ButtonElement addButton = $(ButtonElement.class).id(InnerRowCompUI.BUTTON_ADD_ID);
+        ButtonElement rmvButton = $(ButtonElement.class).id(InnerRowCompUI.BUTTON_RMV_ID);
         addButton.click();
         rmvButton.click();
 

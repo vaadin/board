@@ -6,7 +6,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.VerticalLayout;
 
-public class InnerRowUI extends AbstractTestUI {
+public class InnerRowCompUI extends AbstractTestUI {
 
     public final static String BUTTON_ADD_ID="btnadd";
     public final static String BUTTON_RMV_ID="btnrmv";

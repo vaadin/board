@@ -6,14 +6,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
-import com.vaadin.addon.board.testUI.RemoveComponentUI;
+import com.vaadin.addon.board.testUI.RemoveComponentCompUI;
 import com.vaadin.testbench.By;
 
 public class RemoveComponentIT extends AbstractParallelTest {
 
     @Override
     protected Class<?> getUIClass() {
-        return RemoveComponentUI.class;
+        return RemoveComponentCompUI.class;
     }
 
     @Test

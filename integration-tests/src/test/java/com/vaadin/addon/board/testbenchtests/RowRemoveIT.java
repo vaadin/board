@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
-import com.vaadin.addon.board.testUI.RowRemoveUI;
+import com.vaadin.addon.board.testUI.RowRemoveCompUI;
 import com.vaadin.testbench.By;
 import com.vaadin.testbench.elements.ButtonElement;
 
@@ -14,7 +14,7 @@ public class RowRemoveIT extends AbstractParallelTest {
 
     @Override
     protected Class<?> getUIClass() {
-        return RowRemoveUI.class;
+        return RowRemoveCompUI.class;
     }
 
     @Test
@@ -25,7 +25,7 @@ public class RowRemoveIT extends AbstractParallelTest {
         Assert.assertEquals("Before removing board has 2 rows" , 2, rows.size());
         Assert.assertEquals("Board removing board has 4 elements", 4, children.size());
 
-        ButtonElement rmvButton =$(ButtonElement.class).id(RowRemoveUI.RMV_BUTTON_ID);
+        ButtonElement rmvButton =$(ButtonElement.class).id(RowRemoveCompUI.RMV_BUTTON_ID);
         rmvButton.click();
 
         rows = board.findElements(By.xpath("//vaadin-board/vaadin-board-row"));
