@@ -60,8 +60,7 @@ public class CompatChartComponents {
   public static class BarChartUI extends CompatBasicChartUI {
 
     @Override
-    protected Supplier<Component> nextChartInstance() {
-      return () -> {
+    protected Component nextChartInstance() {
         Chart chart = new Chart(ChartType.BAR);
 
         Configuration conf = chart.getConfiguration();
@@ -112,7 +111,7 @@ public class CompatChartComponents {
         chart.drawChart(conf);
 
         return chart;
-      };
+
     }
 
   }
@@ -164,8 +163,8 @@ public class CompatChartComponents {
     }
 
     @Override
-    protected Supplier<Component> nextChartInstance() {
-      return this::getChart;
+    protected Component nextChartInstance() {
+      return getChart();
     }
   }
 
@@ -281,8 +280,8 @@ public class CompatChartComponents {
     }
 
     @Override
-    protected Supplier<Component> nextChartInstance() {
-      return this::getChart;
+    protected Component nextChartInstance() {
+      return getChart();
     }
   }
 
@@ -403,8 +402,8 @@ public class CompatChartComponents {
     }
 
     @Override
-    protected Supplier<Component> nextChartInstance() {
-      return this::getChart;
+    protected Component nextChartInstance() {
+      return getChart();
     }
   }
 
@@ -475,8 +474,8 @@ public class CompatChartComponents {
     }
 
     @Override
-    protected Supplier<Component> nextChartInstance() {
-      return this::getChart;
+    protected Component nextChartInstance() {
+      return getChart();
     }
 
     public static class StockPrices {

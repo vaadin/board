@@ -17,16 +17,16 @@ import com.vaadin.ui.Component;
  */
 public abstract class CompatBasicChartUI extends AbstractTestUI {
 
-  protected abstract Supplier<Component> nextChartInstance();
+  protected abstract Component nextChartInstance();
 
   @Override
   protected void init(VaadinRequest vaadinRequest) {
     setContent(
         testLayout()
             .apply(Stream.of(
-                nextChartInstance().get(),
-                nextChartInstance().get(),
-                nextChartInstance().get())));
+                nextChartInstance(),
+                nextChartInstance(),
+                nextChartInstance())));
   }
 
   protected Color[] getThemeColors() {
