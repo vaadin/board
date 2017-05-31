@@ -13,3 +13,6 @@ yarn.lock
 **/VAADIN/frontend/
 integration-tests/src/main/frontend/
 integration-tests/error-screenshots/
+integration-tests/config/browser_combinations.json
+integration-tests/config/selenium-grids.properties
+integration-tests/config/testbench.properties

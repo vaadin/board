@@ -1,0 +1,52 @@
+<vaadin-board>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="1/4"></demo-element>
+    <demo-element item-number="2" item-size="1/4"></demo-element>
+    <demo-element item-number="3" item-size="1/4"></demo-element>
+    <demo-element item-number="4" item-size="1/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element board-cols="2" item-number="1" item-size="2/4"></demo-element>
+    <demo-element item-number="2" item-size="1/4"></demo-element>
+    <demo-element item-number="3" item-size="1/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="1/4"></demo-element>
+    <demo-element item-number="2" item-size="1/4"></demo-element>
+    <demo-element board-cols="2" item-number="3" item-size="2/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="1/4"></demo-element>
+    <demo-element board-cols="2" item-number="2" item-size="2/4"></demo-element>
+    <demo-element item-number="3" item-size="1/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="2/4"></demo-element>
+    <demo-element item-number="2" item-size="2/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element board-cols="3" item-number="1" item-size="3/4"></demo-element>
+    <demo-element item-number="2" item-size="1/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="1/4"></demo-element>
+    <demo-element board-cols="3" item-number="2" item-size="3/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="4/4"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="1/3"></demo-element>
+    <demo-element item-number="2" item-size="1/3"></demo-element>
+    <demo-element item-number="3" item-size="1/3"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element board-cols="2" item-number="1" item-size="2/3"></demo-element>
+    <demo-element item-number="2" item-size="1/3"></demo-element>
+  </vaadin-board-row>
+  <vaadin-board-row>
+    <demo-element item-number="1" item-size="1/3"></demo-element>
+    <demo-element board-cols="2" item-number="2" item-size="2/3"></demo-element>
+  </vaadin-board-row>
+</vaadin-board>
+
