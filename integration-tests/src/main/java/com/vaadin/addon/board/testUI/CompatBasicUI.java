@@ -13,7 +13,7 @@ import com.vaadin.ui.Component;
  */
 public abstract class CompatBasicUI extends AbstractTestUI {
 
-    protected abstract Supplier<Class<? extends Component>> nextClass();
+    protected abstract Class<? extends Component> nextClass();
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -21,7 +21,7 @@ public abstract class CompatBasicUI extends AbstractTestUI {
             testLayout()
                 .apply(
                     newInstanceStream()
-                        .apply(nextClass().get(), 3)
+                        .apply(nextClass(), 3)
                         .getOrElse(Stream::of)));
     }
 }

@@ -38,29 +38,29 @@ public class CompatBasicComponents {
 
   public static class ButtonUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> Button.class;
+    protected Class<? extends Component> nextClass() {
+      return Button.class;
     }
   }
 
   public static class ComboBoxUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> ComboBox.class;
+    protected Class<? extends Component> nextClass() {
+      return ComboBox.class;
     }
   }
 
   public static class CheckBoxUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> CheckBox.class;
+    protected Class<? extends Component> nextClass() {
+      return CheckBox.class;
     }
   }
 
   public static class ColorPickerUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> ColorPicker.class;
+    protected Class<? extends Component> nextClass() {
+      return ColorPicker.class;
     }
   }
 
@@ -98,16 +98,16 @@ public class CompatBasicComponents {
 
   public static class DateFieldUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> DateField.class;
+    protected Class<? extends Component> nextClass() {
+      return DateField.class;
     }
   }
 
   //DASH-107
   public static class FlashUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> Flash.class;
+    protected Class<? extends Component> nextClass() {
+      return Flash.class;
     }
   }
 
@@ -157,8 +157,8 @@ public class CompatBasicComponents {
 
   public static class LabelUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> Label.class;
+    protected Class<? extends Component> nextClass() {
+      return Label.class;
     }
   }
 
@@ -181,15 +181,15 @@ public class CompatBasicComponents {
 
   public static class PanelUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> Panel.class;
+    protected Class<? extends Component> nextClass() {
+      return Panel.class;
     }
   }
 
   public static class PasswordFieldUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> PasswordField.class;
+    protected Class<? extends Component> nextClass() {
+      return PasswordField.class;
     }
   }
 
@@ -209,8 +209,8 @@ public class CompatBasicComponents {
 
   public static class SliderUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> Slider.class;
+    protected Class<? extends Component> nextClass() {
+      return Slider.class;
     }
   }
 
@@ -247,8 +247,8 @@ public class CompatBasicComponents {
   //DASH-109
   public static class TwinColSelectUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> TwinColSelect.class;
+    protected Class<? extends Component> nextClass() {
+      return TwinColSelect.class;
     }
   }
 
@@ -256,8 +256,8 @@ public class CompatBasicComponents {
   //DASH-108
   public static class VideoUI extends CompatBasicUI {
     @Override
-    protected Supplier<Class<? extends Component>> nextClass() {
-      return () -> Video.class;
+    protected Class<? extends Component> nextClass() {
+      return Video.class;
     }
   }
 
