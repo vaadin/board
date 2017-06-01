@@ -38,6 +38,7 @@ public abstract class AbstractParallelTest extends ParallelTest {
     @Before
     public void setup() throws Exception {
         super.setup();
+        getDriver().manage().window().setSize(new Dimension(1024,768));
         openURL();
     }
 
