@@ -19,13 +19,13 @@ public class CompatHorizontalLayoutUIIT extends AbstractParallelTest {
   }
 
 
-  Supplier<WebElement> testedElementSupllier = () -> $(ButtonElement.class)
+  Supplier<WebElement> testedElementSupplier = () -> $(ButtonElement.class)
       .id(AbstractTestCompUI.ID_PREFIX + 2);
 
   @Test
   public void testGenericWidth()
       throws Exception {
-    TestFunctions.assertDimension(buttonSwitchSupplier.get(),testedElementSupllier.get(),(elem)->{
+    TestFunctions.assertDimension(buttonSwitchSupplier.get(),testedElementSupplier.get(),(elem)->{
       return elem.getSize().width;
     });
   }
