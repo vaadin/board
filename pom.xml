@@ -15,6 +15,7 @@
 	</properties>
 	<modules>
 		<module>addon</module>
+		<module>precompiled</module>
 		<module>integration-tests</module>
 	</modules>
 
