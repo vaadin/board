@@ -13,12 +13,19 @@
 		<vaadin.version>8.1-SNAPSHOT</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 	</properties>
-	<modules>
-		<module>addon</module>
-		<module>precompiled</module>
-		<module>integration-tests</module>
-		<module>testbench-api</module>
-	</modules>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>vaadin-snapshots</id>
+			<name>Vaadin snapshot repository</name>
+			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>vaadin-addons</id>
+			<name>Vaadin add-ons repository</name>
+			<url>http://vaadin.com/nexus/content/repositories/vaadin-addons</url>
+		</repository>
+	</distributionManagement>
 
 	<repositories>
 		<repository>
@@ -40,4 +47,51 @@
 			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<modules>
+		<module>addon</module>
+		<module>precompiled</module>
+        <module>testbench-api</module>
+		<module>integration-tests</module>
+	</modules>
+
+	<profiles>
+			<profile>
+				<id>release</id>
+				<modules>
+					<module>addon</module>
+					<module>precompiled</module>
+					<module>testbench-api</module>
+				</modules>
+				<build>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-deploy-plugin</artifactId>
+							<configuration>
+								<skip>true</skip>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.sonatype.plugins</groupId>
+							<artifactId>nexus-staging-maven-plugin</artifactId>
+							<version>1.6</version>
+							<executions>
+								<execution>
+									<id>default-deploy</id>
+									<phase>deploy</phase>
+									<goals>
+										<goal>deploy</goal>
+									</goals>
+								</execution>
+							</executions>
+							<configuration>
+								<serverId>vaadin-prerelease-staging</serverId>
+								<nexusUrl>http://dh1.int.vaadin.com:8082/nexus/</nexusUrl>
+							</configuration>
+						</plugin>
+					</plugins>
+				</build>
+			</profile>
+		</profiles>
 </project>
