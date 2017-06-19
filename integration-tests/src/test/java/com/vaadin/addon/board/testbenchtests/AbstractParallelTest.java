@@ -18,11 +18,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.vaadin.addon.board.testUI.AbstractTestCompUI;
 import com.vaadin.testbench.annotations.BrowserConfiguration;
-import com.vaadin.testbench.annotations.RunOnHub;
+import com.vaadin.testbench.annotations.RunLocally;
 import com.vaadin.testbench.elements.ButtonElement;
+import com.vaadin.testbench.parallel.Browser;
 import com.vaadin.testbench.parallel.ParallelTest;
 
-@RunOnHub("tb3-hub.intra.itmill.com")
+//@RunOnHub("tb3-hub.intra.itmill.com")
+@RunLocally(Browser.CHROME)
 public abstract class AbstractParallelTest extends ParallelTest {
 
     public Supplier<WebElement> buttonSwitchSupplier = () -> $(ButtonElement.class)
