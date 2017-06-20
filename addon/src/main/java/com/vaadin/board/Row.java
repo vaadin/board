@@ -21,7 +21,7 @@ import com.vaadin.ui.declarative.DesignContext;
  * <p>
  * Each Row consists of four columns, and can contain up to four components
  * taking one column each, or fewer components with multiple columns each as
- * long as sum of columns stays less than or equal to 4
+ * long as sum of columns stays less than or equal to four.
  * 
  * <p>
  * One row might also contain a nested row as shown in the following example:
@@ -72,7 +72,7 @@ public class Row extends AbstractComponentContainer {
         int colValueForComponent = map.getOrDefault(component, 0);
         int sum = getState().usedColAmount();
         if ((sum - colValueForComponent + cols) > 4) {
-            throw new IllegalStateException("new total amount of cols would be bigger 4");
+            throw new IllegalStateException("new total amount of cols would be bigger than 4");
         }
     }
 
