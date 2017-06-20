@@ -19,10 +19,10 @@ import com.vaadin.ui.declarative.DesignException;
  * Vaadin Board is a Vaadin Add-On Component which allows creating responsive
  * layouts.
  * <p>
- * Vaadin Board consists on {@link Row}s where you can add any Vaadin component.
+ * Vaadin Board consists of {@link Row}s where you can add any Vaadin component.
  * Each Row consists of four columns, and can contain up to four components
  * taking one column each, or fewer components with multiple columns each as
- * long as sum of columns stays less than or equal to 4
+ * long as sum of columns stays less than or equal to four.
  * 
  * <p>
  * Here is a simple usage example:
