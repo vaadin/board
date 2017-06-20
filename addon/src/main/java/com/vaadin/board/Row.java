@@ -179,7 +179,7 @@ public class Row extends AbstractComponentContainer {
      *            the child component to set columns for
      * @param cols
      *            the number of columns the component spans
-     * @throw IllegalArgumentException if the component is not a child component
+     * @throws IllegalArgumentException if the component is not a child component
      *        or if the number of columns is less than 1
      **/
     public void setCols(Component component, int cols) {
