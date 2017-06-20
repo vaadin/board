@@ -16,6 +16,30 @@ import com.vaadin.ui.AbstractComponentContainer;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.declarative.DesignContext;
 
+/**
+ * Row class to define rows used in a {@link Board} instance.
+ * <p>
+ * Each Row consists of four columns, and can contain up to four components
+ * taking one column each, or fewer components with multiple columns each as
+ * long as sum of columns stays less than or equal to 4
+ * 
+ * <p>
+ * One row might also contain a nested row as shown in the following example:
+ * 
+ * <pre>
+ * Board board = new Board();
+ * Label lbl1 = createLabel("Label 1");
+ * Label lbl2 = createLabel("Label 2");
+ * Label lbl3 = createLabel("Label 3");
+ * 
+ * Label inner1 = createLabel("Inner 1");
+ * Label inner3 = createLabel("Inner 3");
+ * Label inner4 = createLabel("Inner 4");
+ * Label inner2 = createLabel("Inner 2");
+ * Row innerRow = new Row(inner1, inner2, inner3, inner4);
+ * Row outerRow = board.addRow(lbl1, lbl2, lbl3, innerRow);
+ * </pre>
+ */
 @HtmlImport("frontend://vaadin-board/vaadin-board-row.html")
 public class Row extends AbstractComponentContainer {
 
@@ -71,7 +95,6 @@ public class Row extends AbstractComponentContainer {
         }
     }
 
-
     /**
      * Adds the given component(s) to the row.
      * <p>
@@ -105,16 +128,16 @@ public class Row extends AbstractComponentContainer {
      *             4 child components
      **/
     @Override
-    public void addComponent(Component c) {
-        addComponent(c, 1);
+    public void addComponent(Component component) {
+        addComponent(component, 1);
     }
 
     @Override
-    public void removeComponent(Component c) {
-        super.removeComponent(c);
-        if (components.contains(c)) {
-            components.remove(c);
-            getState(true).cols.remove(c);
+    public void removeComponent(Component component) {
+        super.removeComponent(component);
+        if (components.contains(component)) {
+            components.remove(component);
+            getState(true).cols.remove(component);
         }
     }
 
@@ -179,8 +202,9 @@ public class Row extends AbstractComponentContainer {
      *            the child component to set columns for
      * @param cols
      *            the number of columns the component spans
-     * @throws IllegalArgumentException if the component is not a child component
-     *        or if the number of columns is less than 1
+     * @throws IllegalArgumentException
+     *             if the component is not a child component or if the number of
+     *             columns is less than 1
      **/
     public void setCols(Component component, int cols) {
         checkIfValueSmallerOrEqualFour(component, cols);
