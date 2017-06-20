@@ -19,13 +19,37 @@ import com.vaadin.ui.declarative.DesignContext;
 @HtmlImport("frontend://vaadin-board/vaadin-board-row.html")
 public class Row extends AbstractComponentContainer {
 
+    protected List<Component> components = new ArrayList<>();
+
+    /**
+     * Creates an empty row.
+     * <p>
+     * Use {@link #addComponent(Component)},
+     * {@link #addComponent(Component, int)} or
+     * {@link #addComponent(Component, int)} to add content to the row.
+     */
+    public Row() {
+        super();
+    }
+
+    /**
+     * Creates an new row with the given components.
+     * 
+     * @param components
+     *            initial content of the row
+     */
+    public Row(Component... components) {
+        super();
+        addComponents(components);
+    }
 
     private void checkNewColValue(Component component, int cols) {
         Map<Connector, Integer> map = getState().cols;
         int colValueForComponent = map.getOrDefault(component, 0);
         int sum = getState().usedColAmount();
-        if ((sum - colValueForComponent + cols) > 4)
+        if ((sum - colValueForComponent + cols) > 4) {
             throw new IllegalStateException("new total amount of cols would be bigger 4");
+        }
     }
 
     private void checkIfContained(Component component, int cols) {
@@ -36,28 +60,30 @@ public class Row extends AbstractComponentContainer {
     }
 
     private void checkIfNotNegative(Component component, int cols) {
-        if (cols < 1)
+        if (cols < 1) {
             throw new IllegalStateException("please , don´t try to add negative values or zero for cols");
+        }
     }
 
     private void checkIfValueSmallerOrEqualFour(Component component, int cols) {
-        if (cols > 4)
+        if (cols > 4) {
             throw new IllegalStateException("max col value you can set is 4");
+        }
     }
 
-    protected List<Component> components = new ArrayList<>();
 
     /**
      * Adds the given component(s) to the row.
      * <p>
-     * All added components are set to use 1 column. Use #setCols(Component,int)
-     * to make a component span multiple columns.
+     * All added components are set to use 1 column. Use
+     * {@link #setCols(Component, int)} to make a component span multiple
+     * columns.
      *
      * @param components
-     *     the components to add
+     *            the components to add
      * @throws IllegalStateException
-     *     if adding the components would cause the row to have more
-     *     than 4 child components
+     *             if adding the components would cause the row to have more
+     *             than 4 child components
      **/
     @Override
     public void addComponents(Component... components) {
@@ -65,6 +91,19 @@ public class Row extends AbstractComponentContainer {
         super.addComponents(components);
     }
 
+    /**
+     * Adds the given component to the row.
+     * <p>
+     * All added components are set to use 1 column. Use
+     * {@link #setCols(Component, int)} to make a component span multiple
+     * columns.
+     *
+     * @param component
+     *            the component to add
+     * @throws IllegalStateException
+     *             if adding the component would cause the row to have more than
+     *             4 child components
+     **/
     @Override
     public void addComponent(Component c) {
         addComponent(c, 1);
@@ -83,12 +122,12 @@ public class Row extends AbstractComponentContainer {
      * Adds the given component to the row using the given number of columns.
      *
      * @param component
-     *     the component to add
+     *            the component to add
      * @param cols
-     *     the number of columns the component should use
+     *            the number of columns the component should use
      * @throws IllegalStateException
-     *     if adding the components would cause the row to have more
-     *     than 4 child components
+     *             if adding the component would cause the row to have more than
+     *             4 child components
      **/
     public void addComponent(Component component, int cols) {
         checkIfValueSmallerOrEqualFour(component, cols);
@@ -105,7 +144,7 @@ public class Row extends AbstractComponentContainer {
      * Gets the number of columns the given component spans.
      *
      * @param component
-     *     the child component to get columns for
+     *            the child component to get columns for
      * @return the number of columns the component spans, by default 1.
      **/
     public int getCols(Component component) {
@@ -137,11 +176,11 @@ public class Row extends AbstractComponentContainer {
      * Sets the number of columns the given component spans.
      *
      * @param component
-     *     the child component to set columns for
+     *            the child component to set columns for
      * @param cols
-     *     the number of columns the component spans
+     *            the number of columns the component spans
      * @throw IllegalArgumentException if the component is not a child component
-     * or if the number of columns is less than 1
+     *        or if the number of columns is less than 1
      **/
     public void setCols(Component component, int cols) {
         checkIfValueSmallerOrEqualFour(component, cols);
@@ -171,7 +210,6 @@ public class Row extends AbstractComponentContainer {
     @Override
     public void readDesign(Element design, DesignContext designContext) {
         super.readDesign(design, designContext);
-        String content = design.html();
         // handle children
         for (Element childComponent : design.children()) {
             Component child = designContext.readDesign(childComponent);
