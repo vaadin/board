@@ -7,7 +7,7 @@
     <groupId>com.vaadin</groupId>
     <artifactId>vaadin-board-testbench-api</artifactId>
     <packaging>jar</packaging>
-    <name>vaadin-board-testbench-api</name>
+    <name>Vaadin Board Testbench API</name>
 
     <parent>
         <artifactId>vaadin-board-root</artifactId>
