@@ -4,7 +4,7 @@ Vaadin Board key feature is how it effectively reorders UI components on differe
 
 **You need to use 8.1.0.beta2 or higher version of Vaadin Framework.**
 
-##3 License & Author
+### License & Author
 
 This Add-on is distributed under [Commercial Vaadin Add-on License version 3](http://vaadin.com/license/cval-3) (CVALv3).
 For license terms, see LICENSE.txt.
@@ -29,16 +29,16 @@ Add vaadin-board and vaadin-board-precompiled to your project:
 ### Basic Use
 
 ```java
-        Board board = new Board();
-        board.setSizeFull();
+Board board = new Board();
+board.setSizeFull();
 
-        Label lbl1 =  new Label("LABEL1");
-        Label lbl2 =  new Label("LABEL2");
-        Label lbl3 =  new Label("LABEL3");
-        Label lbl4 =  new Label("LABEL4");
+Label lbl1 =  new Label("LABEL1");
+Label lbl2 =  new Label("LABEL2");
+Label lbl3 =  new Label("LABEL3");
+Label lbl4 =  new Label("LABEL4");
 
-        board.addRow(lbl1, lbl2, lbl3, lbl4);
-        setContent(board);
+board.addRow(lbl1, lbl2, lbl3, lbl4);
+setContent(board);
 ```
 
 [Demo](https://demo.vaadin.com/vaadin-board)
