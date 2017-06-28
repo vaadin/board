@@ -25,7 +25,8 @@ public class CompatSpreadsheetUI extends AbstractTestCompUI {
     sheet.createCell(1, 2, ""); // Set a dummy value
     sheet.getCell(1, 2).setCellFormula("A2*B2");
     sheet.autofitColumn(0);
-    sheet.setSizeFull();
+    sheet.setWidth("100%");
+    sheet.setHeightUndefined();
     return sheet;
   }
 
