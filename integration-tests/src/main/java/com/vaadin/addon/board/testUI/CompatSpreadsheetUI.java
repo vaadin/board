@@ -3,12 +3,6 @@ package com.vaadin.addon.board.testUI;
 import com.vaadin.addon.spreadsheet.Spreadsheet;
 import com.vaadin.ui.Component;
 
-/**
- *
- */
-
-//Todo - video https://youtu.be/n3jXzy2EvaU
-//DASH-116
 public class CompatSpreadsheetUI extends AbstractTestCompUI {
 
   @Override
