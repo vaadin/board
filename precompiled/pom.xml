@@ -19,6 +19,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<frontend.working.directory>src/main/frontend</frontend.working.directory>
 	</properties>
 
 	<repositories>
@@ -43,6 +45,29 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${frontend.working.directory}/bower_components</directory>
+						</fileset>
+						<fileset>
+							<directory>${frontend.working.directory}/build</directory>
+						</fileset>
+						<fileset>
+							<directory>${frontend.working.directory}/etc</directory>
+						</fileset>
+						<fileset>
+							<directory>${frontend.working.directory}/node</directory>
+						</fileset>
+						<fileset>
+							<directory>${frontend.working.directory}/node_modules</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-frontend-maven-plugin</artifactId>
 				<version>0.1-SNAPSHOT</version>
@@ -61,7 +86,7 @@
 				<configuration>
 					<nodeVersion>v6.9.1</nodeVersion>
 					<yarnVersion>v0.22.0</yarnVersion>
-					<workingDirectory>src/main/frontend</workingDirectory>
+					<workingDirectory>${frontend.working.directory}</workingDirectory>
 				</configuration>
 				<executions>
 					<execution>
