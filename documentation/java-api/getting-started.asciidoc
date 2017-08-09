@@ -32,7 +32,7 @@ Execute the following command to create the project:
 ----
 mvn archetype:generate  \
     -DarchetypeGroupId=com.vaadin \
-    -DarchetypeArtifactId=vaadin-archetype-application  \    
+    -DarchetypeArtifactId=vaadin-archetype-application  \
     -DarchetypeVersion=8.1.0
 ----
 
