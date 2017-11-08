@@ -39,15 +39,6 @@
     padding: 10px;
     background: #dedede;
     border: 5px solid #FFF;
-
-    .v-caption {
-      display: none;
-    }
-
-    img {
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-    }
+    object-fit: cover;
   }
 }
