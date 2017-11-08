@@ -105,9 +105,7 @@ public class RowTypes extends VerticalLayout {
     public Component createBox(String number, String size) {
         // IE11 has an issue for calculating flex-basis if element has margin, padding or border
         // Adding a wrapper fixes the issue
-        VerticalLayout boxContainer = new VerticalLayout();
-        boxContainer.setMargin(false);
-        boxContainer.setSpacing(false);
+        CssLayout boxContainer = new CssLayout();
 
         CssLayout innerContainer = new CssLayout();
 

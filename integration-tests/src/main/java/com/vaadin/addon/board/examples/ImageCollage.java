@@ -95,10 +95,7 @@ public class ImageCollage extends VerticalLayout {
     private Component createImageBox(int n) {
         // IE11 has an issue for calculating flex-basis if element has margin, padding or border
         // Adding a wrapper fixes the issue
-        VerticalLayout container = new VerticalLayout();
-        container.setSpacing(false);
-        container.setMargin(false);
-        container.setStyleName("image-collage-container");
+        CssLayout container = new CssLayout();
 
         CssLayout innerContainer = new CssLayout();
         innerContainer.setStyleName("image-collage-item");
