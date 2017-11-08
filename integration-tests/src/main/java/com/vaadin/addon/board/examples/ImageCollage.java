@@ -97,16 +97,14 @@ public class ImageCollage extends VerticalLayout {
         // Adding a wrapper fixes the issue
         CssLayout container = new CssLayout();
 
-        CssLayout innerContainer = new CssLayout();
-        innerContainer.setStyleName("image-collage-item");
-
         n = (n - 1) % resources.length;
+
         Image image = new Image("", resources[n]);
         image.setSizeFull();
+        image.setStyleName("image-collage-item");
+        image.setCaption(null);
 
-        innerContainer.addComponents(image);
-
-        container.addComponent(innerContainer);
+        container.addComponents(image);
 
         return container;
     }
