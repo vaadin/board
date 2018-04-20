@@ -1,3 +1,5 @@
+[![Published on vaadin.com/directory](https://img.shields.io/vaadin-directory/status/vaadin-board.svg)](https://vaadin.com/directory/component/vaadin-board)
+
 ### Overview
 Vaadin addon allows to create flexible responsive layouts and build nice looking dashboard.
 Vaadin Board key feature is how it effectively reorders UI components on different screen sizes, maximizing the use of space and looking stunning.
