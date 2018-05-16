@@ -35,6 +35,17 @@ rearranged to two rows when switching to tablet: both with 2 items that take 50%
         board.addRow(lbl1, lbl2, lbl3, lbl4);
         setContent(board);
 ----
+[NOTE]
+Setting height for the row is not supported. Set height for the child components.
+[NOTE]
+With IE11 if you want to have a border for the direct child of the [classname]#Row# you need to create a wrapper HTML element
+and add a border there, but not to the direct child of the [classname]#Row#.
+
+[NOTE]
+For a few components you should not use relative height, but set height of the component in pixels or leave it undefined height. This affects Grid, Tree, TreeGrid, GridLayout and Spreadsheet.
+
+[NOTE]
+Vaadin TabSheet does not resize correctly, when changing from a small viewport size to a big one. Wrapping TabSheet inside the CSSLayout fixes the problem
 
 You can specify the element to occupy from one to four columns, by using [methodname]#setComponentSpan()#:
 
@@ -102,29 +113,3 @@ vaadin-board-row.medium .v-label {
 ----
 
 After adding this CSS to your theme you will see that labels have different font-size for different viewport size.
-
-[[board.basic-use.known-issues]]
-== Known Issues
-- Setting height for the row is not supported. Set height for the child components.
-
-- You can not set relative height for [classname]#Grid#, [classname]#GridTree#, [classname]#GridLayout#, [classname]#SpreadSheet# inside the board row.
-If  Vaadin component height depends on its content, setting  relative height for this component makes them very small.
-You need to set the height of the component in pixels or set its content to have fixed size.
-This issue happens for Grid, Tree, TreeGrid, GridLayout, Spreadsheet.
-
-- Vaadin Flash Component does not resize correctly inside the Vaadin Board.
-
-- Vaadin TwinColSelect does not resize correctly, the second row of the component sometimes rendered at the bottom, instead of
- to the right of the first row.
-
-- Vaadin TabSheet does not resize correctly, when changing from a small viewport size to a big one.
- Wrapping [classname]#TabSheet# inside the [classname]#CSSLayout# fixes the problem.
-
-- Because Vaadin Board uses flexbox, there is a limited support for IE11.
-If you want to have a border for the direct child of the [classname]#Row# you need to create a wrapper HTML element
-and add a border there, but not to the direct child of the [classname]#Row#.
-The description of the bug can be found link:https://github.com/philipwalton/flexbugs#7-flex-basis-doesnt-account-for-box-sizingborder-box[here].
-
-For Vaadin Components this means, you need to put Vaadin Components that have border inside a [classname]#CSSLayout#.
-This limitation does not affect [classname]#Label#, [classname]#Grid#, [classname]#Chart#.
-
