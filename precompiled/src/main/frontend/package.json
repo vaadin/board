@@ -6,7 +6,7 @@
   "devDependencies": {
     "bower": "^1.8.0",
     "gulp": "^3.9.1",
-    "polymer-cli": "next",
+    "polymer-cli": "^1.6.0",
     "mkdirp": "^0.5.1"
   },
   "scripts": {
