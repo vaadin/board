@@ -7,7 +7,7 @@ layout: page
 [[board.getting-started]]
 = Getting started with Vaadin Board
 
-https://vaadin.com/directory/component/vaadinvaadin-board[vaadin-board] is a regular https://vaadin.com/docs/v11/flow/web-components/introduction-to-webcomponents.html[web component], which you can add to any web page. It can be used both with and without https://www.polymer-project.org/2.0/docs/about_20[Polymer 2].
+[classname]`vaadin-board` is a regular https://vaadin.com/docs/v11/flow/web-components/introduction-to-webcomponents.html[web component], which you can add to any web page. It can be used both with and without https://www.polymer-project.org/2.0/docs/about_20[Polymer 2].
 
 In this tutorial, you will learn how to:
 
