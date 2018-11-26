@@ -15,6 +15,7 @@ import com.vaadin.ui.Flash;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.ProgressBar;
@@ -25,14 +26,14 @@ import com.vaadin.ui.TwinColSelect;
 import com.vaadin.ui.Video;
 
 /**
- * http://localhost:8080/Dash24BasicComponents$ButtonUI
+ * http://localhost:8080/CompatBasicComponents$ButtonUI
  */
 public class CompatBasicComponents {
 
   public static class ButtonUI extends CompatBasicUI {
     @Override
     protected Component createTestComponent() {
-      return new Button();
+      return new Button("Button caption", e -> Notification.show("button clicked"));
     }
   }
 
