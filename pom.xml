@@ -29,7 +29,7 @@
 		<snapshotRepository>
 			<id>vaadin-snapshots</id>
 			<name>Vaadin snapshot repository</name>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>vaadin-addons</id>
@@ -40,15 +40,15 @@
 	<repositories>
 		<repository>
 			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
 		</repository>
 		<repository>
 			<id>vaadin-addons</id>
-			<url>http://maven.vaadin.com/vaadin-addons</url>
+			<url>https://maven.vaadin.com/vaadin-addons</url>
 		</repository>
 		<repository>
 			<id>vaadin-prereleases</id>
-			<url>http://maven.vaadin.com/vaadin-prereleases</url>
+			<url>https://maven.vaadin.com/vaadin-prereleases</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -58,7 +58,7 @@
 		</pluginRepository>
 		<pluginRepository>
 			<id>vaadin-prereleases</id>
-			<url>http://maven.vaadin.com/vaadin-prereleases</url>
+			<url>https://maven.vaadin.com/vaadin-prereleases</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<profiles>
