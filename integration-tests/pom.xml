@@ -194,7 +194,7 @@
 			<repositories>
 				<repository>
 					<id>vaadin-prereleases</id>
-					<url>http://maven.vaadin.com/vaadin-prereleases</url>
+					<url>https://maven.vaadin.com/vaadin-prereleases</url>
 				</repository>
 				<repository>
 					<id>vaadin-snapshots</id>
@@ -210,7 +210,7 @@
 			<pluginRepositories>
 				<pluginRepository>
 					<id>vaadin-prereleases</id>
-					<url>http://maven.vaadin.com/vaadin-prereleases</url>
+					<url>https://maven.vaadin.com/vaadin-prereleases</url>
 				</pluginRepository>
 				<pluginRepository>
 					<id>vaadin-snapshots</id>
